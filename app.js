@@ -1,19 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var router = require('./router/router');
+var router = require('./router/index');
 
 var hostname = '127.0.0.1';
 var port = '3001';
 
 app.listen(port, hostname, function (req, res) {
-    console.log('open Server!!');
+    console.log('Open Server!!');
 });
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', router);
-app.use('/files', router);
-
-app.use(express.static('public'));
+app.use(router);

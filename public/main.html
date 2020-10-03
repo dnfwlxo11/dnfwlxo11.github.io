@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
 </head>
+
 <body>
+    <label id='test'>asd</label>
+
     <script>
         var fileName = {};
 
-        for (var i=1;i<=15;i++){
+        for (var i = 1; i <= 15; i++) {
             fileName['fileName_' + i] = 'copy_proj_' + i + '.jpg';
         }
 
-        console.log(fileName);
-
         function sendFilename(url, data) {
-            data = {'data' : data}
+            data = { 'data': data }
             data = JSON.stringify(data);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(data);
+
+            // xhr.addEventListener('load', function () {
+            //     var result = xhr.responseText;
+
+            //     document.querySelector('#test').innerHTML = result;
+            //     console.log(result);
+            // });
         }
+
     </script>
-
-    안녕하세요
-
     <form action='/copy_proj' method='post'>
-        <label value='카피 프로젝트 보러가기'>
-        <input type='submit' onclick="sendFilename('/copy_proj', fileName)">
+        <input type='submit' onclick="sendFilename('/send_fileName', fileName)" value='카피 프로젝트 보기'>
     </form>
 </body>
+
 </html>
