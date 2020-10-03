@@ -6,7 +6,7 @@ var load_infor = require('./loadInfor');
 
 router.get('/', function(req, res){
     console.log('/로 get 방식으로 접근');
-    res.sendFile(path.join(__dirname, '../public/main.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 })
 
 router.post('/copy_proj', load_infor);
