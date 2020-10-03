@@ -3,10 +3,9 @@ var bodyParser = require('body-parser');
 var app = express();
 var router = require('./router/index');
 
-var hostname = '127.0.0.1';
 var port = '3001';
 
-app.listen(port, hostname, function (req, res) {
+app.listen(port, function (req, res) {
     console.log('Open Server!!');
 });
 
