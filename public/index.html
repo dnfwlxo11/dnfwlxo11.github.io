@@ -4,19 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인페이지</title>
+    <title>대인이의 포트폴리오</title>
 </head>
 
 <body>
     <label id='test'></label>
 
     <script>
-        var fileName = {};
-
-        for (var i = 1; i <= 15; i++) {
-            fileName['fileName_' + i] = 'copy_proj_' + i + '.jpg';
-        }
-
+        // Ajax 방식으로 데이터 보내기
         function sendFilename(url, data) {
             data = { 'data': data }
             data = JSON.stringify(data);
@@ -24,19 +19,47 @@
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(data);
-
-            // xhr.addEventListener('load', function () {
-            //     var result = xhr.responseText;
-
-            //     document.querySelector('#test').innerHTML = result;
-            //     console.log(result);
-            // });
         }
 
+        // 카피 프로젝트
+        var cafiName = [];
+
+        for (var i = 1; i <= 15; i++) {
+            cafiName.push('cafi_proj_' + i + '.jpg');
+        }
+
+        // I-tub 프로젝트
+        var itubName = [];
+
+        for (var i = 1; i <= 47 ; i++) {
+            itubName.push('itub_proj_' + i + '.jpg');
+        }
+
+        // 매치메이커 프로젝트
+        var matchName = [];
+
+        for (var i = 1; i <= 15; i++) {
+            matchName.push('match_proj_' + i + '.jpg');
+        }
     </script>
-    <form action='/copy_proj' method='post'>
-        <input type='submit' onclick="sendFilename('/send_fileName', fileName)" value='카피 프로젝트 보기'>
-    </form>
+
+    <div style="text-align: center;margin: auto 0px;">
+        <form action='/cafi_proj' method='post'>
+            <input type='submit' onclick="sendFilename('/send_fileName', cafiName)" value='카피 프로젝트 보기' style="height: 100px;width: 200px;">
+        </form>
+
+        &nbsp;
+
+        <form action='/itub_proj' method='post'>
+            <input type='submit' onclick="sendFilename('/send_fileName', itubName)" value='I-Tub 프로젝트 보기' style="height: 100px;width: 200px;">
+        </form>
+
+        &nbsp;
+
+        <form action='/match_proj' method='post'>
+            <input type='button' value='(아직 미구현)' style="height: 100px;width: 200px;">
+        </form>
+    </div>
 </body>
 
 </html>

@@ -9,7 +9,8 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../public/index.html'));
 })
 
-router.post('/copy_proj', load_infor);
+router.post('/cafi_proj', load_infor);
+router.post('/itub_proj', load_infor);
 router.post('/send_fileName', load_infor);
 router.get('/imgs/*', load_infor);
 

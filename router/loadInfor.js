@@ -14,8 +14,13 @@ router.post('/send_fileName', function(req, res){
     fileName = req.body.data;
 });
 
-router.post('/copy_proj', function (req, res) {
-    res.render('../public/copy_proj.ejs', {data:fileName});
+router.post('/cafi_proj', function (req, res) {
+    res.render('../public/cafi_proj.ejs', {data:fileName});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
+router.post('/itub_proj', function (req, res) {
+    res.render('../public/itub_proj.ejs', {data:fileName});
     //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
 });
 
