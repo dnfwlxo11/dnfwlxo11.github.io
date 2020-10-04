@@ -11,5 +11,6 @@ router.get('/', function(req, res){
 
 router.post('/copy_proj', load_infor);
 router.post('/send_fileName', load_infor);
+router.get('/imgs/*', load_infor);
 
 module.exports = router; 
