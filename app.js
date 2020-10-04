@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var router = require('./router/index');
 
-var port = '3001';
+var port = process.env.PORT || 8000;
 
 app.listen(port, function (req, res) {
     console.log('Open Server!!');
