@@ -14,13 +14,11 @@
         <hr class='line'>
 
         <br>
-        
+
         <div class='tab_menu'>
-            <button class='tab_menu_btn1 tab_menu_btn on' type='button' onclick="getBoxname(this.className)">프로젝트
-                소개</button>
-            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트
-                PPT</button>
-                <button class='tab_menu_btn3 tab_menu_btn' type='button' onclick="history.go(-1)">다른 프로젝트 보기</button>
+            <button class='tab_menu_btn1 tab_menu_btn on' type='button' onclick="getBoxname(this.className)">프로젝트 소개</button>
+            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트 PPT</button>
+            <button class='tab_menu_btn3 tab_menu_btn' type='button' onclick="history.go(-1)">다른 프로젝트 보기</button>
         </div>
 
         <div class='tab_container'>
@@ -36,11 +34,13 @@
                 <% for(var i=0;i<data.length;i++){ %>
                     <img src='../imgs/itub_proj/<%=data[i]%>' width='70%' style='vertical-align: middle;border: 1px solid #888888;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
                 <% } %>
+                <br><br><br>
+                <input class='top_btn' type='image' src='../../imgs/top_btn.jpg' onclick="javascript:window.scrollTo(0,0)" height="50px" width="50px">
             </div>
         </div>
     </div>
 </body>
 
-<script src='../js/tab_menu.js'></script>
+<script src='../js/coreFunc.js'></script>
 
 </html>

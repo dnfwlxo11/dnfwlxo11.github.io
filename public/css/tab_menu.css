@@ -37,3 +37,9 @@ button {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  .top_btn {
+    position: sticky;
+    right: 20px;
+    bottom: 20px;
+  }
