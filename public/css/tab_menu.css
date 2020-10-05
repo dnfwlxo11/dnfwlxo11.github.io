@@ -9,17 +9,18 @@ button {
     display: inline-block;
   }
   .tab_menu_btn {
-    width:150px;
+    width:200px;
     height:40px;
     transition:0.3s all;
+    font-size: 15pt;
   }
   .tab_menu_btn.on {
-    border-bottom:2px solid #df0000;
+    border-bottom:2px solid #034f84;
     font-weight:700;
-    color:#df0000;
+    color:#034f84;
   }
   .tab_menu_btn:hover {
-    color:#df0000;
+    color:#034f84;
   }
   .tab_box {
     visibility: hidden;
@@ -31,4 +32,8 @@ button {
   .tab_wrap {
     text-align:center;
     vertical-align: top;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }

@@ -1,0 +1,32 @@
+.name_div {
+    line-height: 10%;
+}
+
+.infor_div {
+    line-height: 200%;
+    float: left;
+    text-align: left;
+}
+
+.left_side {
+    float: left;
+    width: 30%;
+    height: 100%vh;
+}
+
+.right_side {
+    float: right;
+    width: 60%;
+    height: 100%vh;
+}
+
+.line {
+    border: 0;
+    background-color: #034f84;
+    height: 7px;
+}
+
+.content {
+    float: left;
+    text-align: left;
+}

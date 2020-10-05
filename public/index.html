@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대인이의 포트폴리오</title>
+    <link rel="stylesheet" type="text/css" href="../css/tab_menu.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
 <body>
-    <label id='test'></label>
-
     <script>
         // Ajax 방식으로 데이터 보내기
         function sendFilename(url, data) {
@@ -38,7 +38,7 @@
         // I-tub 프로젝트
         var itubName = [];
 
-        for (var i = 1; i <= 47 ; i++) {
+        for (var i = 1; i <= 47; i++) {
             itubName.push('itub_proj_' + i + '.jpg');
         }
 
@@ -50,29 +50,81 @@
         }
     </script>
 
-    <div style="text-align: center;margin: auto 0px;">
-        <form action='/cafi_proj' method='post'>
-            <input type='submit' onclick="sendFilename('/send_fileName', cafiName)" value='카피 프로젝트 보기' style="height: 100px;width: 200px;">
-        </form>
+    <div class='tab_wrap'>
+        <hr class='line'>
 
-        &nbsp;
+        <br>
 
-        <form action='/cafi_iot_proj' method='post'>
-            <input type='submit' onclick="sendFilename('/send_fileName', cafi_iot_Name)" value='카피 (IoT와 함께) 프로젝트 보기' style="height: 100px;width: 200px;">
-        </form>
+        <div class='tab_menu'>
+            <button class='tab_menu_btn1 tab_menu_btn on' type='button'
+                onclick="getBoxname(this.className)">자기소개</button>
+            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트
+                보기</button>
+            <button class='tab_menu_btn3 tab_menu_btn' type='button'
+                onclick="alert('dnfwlxo11@naver.com')">Contact</button>
+        </div>
 
-        &nbsp;
+        <br><br><br><br><br><br>
 
-        <form action='/itub_proj' method='post'>
-            <input type='submit' onclick="sendFilename('/send_fileName', itubName)" value='I-Tub 프로젝트 보기' style="height: 100px;width: 200px;">
-        </form>
+        <div class='tab_container' style="text-align: center;">
+            <div class='tab_box1 tab_box on'>
+                <div class='left_side'>
+                    <div class='infor_div'>
+                        <div class='name_div'>
+                            <h4>임대인</h4>
+                            <h5>조선대학교 / 컴퓨터공학과</h5>
+                        </div>
 
-        &nbsp;
+                        <br><br><br><br><br><br>
+                        <a href='https://github.com/dnfwlxo11' target='_brank'>github.com/dnfwlxo11</a>
 
-        <form action='/match_proj' method='post'>
-            <input type='button' value='(아직 미구현)' style="height: 100px;width: 200px;">
-        </form>
+                        <br><br><br>
+                        010-xxxx-xxxx
+                        <br>
+                        dnfwlxo11@naver.com
+                    </div>
+                </div>
+
+                <div class='right_side'>
+                    <div class='content'>
+                        안녕하세요 <br>
+                        포트폴리오 작성중입니다. <br>
+
+                        내용이 잘 나오겠지요? <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class='tab_box2 tab_box'>
+                <form action='/cafi_proj' method='post'>
+                    <input type='submit' onclick="sendFilename('/send_fileName', cafiName)" value='카피 프로젝트 보기'
+                        style="height: 100px;width: 200px;">
+                </form>
+
+                &nbsp;
+
+                <form action='/cafi_iot_proj' method='post'>
+                    <input type='submit' onclick="sendFilename('/send_fileName', cafi_iot_Name)"
+                        value='카피 (IoT와 함께) 프로젝트 보기' style="height: 100px;width: 200px;">
+                </form>
+
+                &nbsp;
+
+                <form action='/itub_proj' method='post'>
+                    <input type='submit' onclick="sendFilename('/send_fileName', itubName)" value='I-Tub 프로젝트 보기'
+                        style="height: 100px;width: 200px;">
+                </form>
+
+                &nbsp;
+
+                <form action='/match_proj' method='post'>
+                    <input type='button' value='(아직 미구현)' style="height: 100px;width: 200px;">
+                </form>
+            </div>
+        </div>
     </div>
 </body>
+
+<script src='./js/tab_menu.js'></script>
 
 </html>
