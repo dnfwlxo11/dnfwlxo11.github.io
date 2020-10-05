@@ -5,7 +5,7 @@ var load_infor = require('./loadInfor');
 
 router.get('/', function(req, res){
     console.log('/로 get 방식으로 접근');
-    document.cookie['tab_num'] = 1;
+    //document.cookie['tab_num'] = 1;
     res.sendFile(path.join(__dirname, '../public/index.html'));
 })
 
