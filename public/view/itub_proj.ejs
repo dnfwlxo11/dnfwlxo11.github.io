@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Tub 프로젝트 소개</title>
+    <link rel="stylesheet" type="text/css" href="../css/tab_menu.css">
+</head>
+
+<body>
+    <div class='tab_wrap'>
+        <div class='tab_menu'>
+            <button class='tab_menu_btn1 tab_menu_btn on' type='button' onclick="getBoxname(this.className)">프로젝트
+                소개</button>
+            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트
+                PPT</button>
+            <button class='tab_menu_btn3 tab_menu_btn' type='button'>다른 프로젝트 보기</button>
+        </div>
+
+        <div class='tab_container'>
+            <div class='tab_box1 tab_box on' style="text-align: center;">
+                <div>
+                    <h1>프로그램 소개</h1>
+                    <h2>주제 : 사용자 맞춤 샤워 서비스</h2>
+                </div>
+            </div>
+
+            <div class='tab_box2 tab_box' style="text-align: center;">
+                <h1>I-Tub (사용자 맞춤 샤워 서비스)</h1>
+                <% for(var i=0;i<data.length;i++){ %>
+                    <img src='../imgs/itub_proj/<%=data[i]%>' width='70%' style='vertical-align: middle;border: 1px solid #888888;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function getBoxname(name) {
+        var name = name.split(' ');
+
+
+        var tab_menu_div = document.getElementsByClassName(name[1]);
+
+        for (var i = 0; i < tab_menu_div.length; i++) {
+            tab_menu_div[i] = tab_menu_div[i].classList.remove('on');
+        }
+
+        this.className += ' on';
+
+        var tab_box_div = document.getElementsByClassName('tab_box');
+
+        for (var i = 0; i < tab_box_div.length; i++) {
+            tab_box_div[i].style.visibility = 'hidden';
+            tab_box_div[i].classList.remove('on');
+        }
+
+        this.className += ' on';
+        var tmp = 'tab_box' + name[0][name[0].length - 1]
+        document.getElementsByClassName(tmp)[0].style.visibility = 'visible';
+    }
+</script>
+
+</html>

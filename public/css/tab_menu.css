@@ -1,0 +1,33 @@
+button {
+    background:none;
+    border:0;
+    outline:0;
+    cursor:pointer;
+  }
+  .tab_menu {
+    display:flex;
+    display: inline-block;
+  }
+  .tab_menu_btn {
+    width:150px;
+    height:40px;
+    transition:0.3s all;
+  }
+  .tab_menu_btn.on {
+    border-bottom:2px solid #df0000;
+    font-weight:700;
+    color:#df0000;
+  }
+  .tab_menu_btn:hover {
+    color:#df0000;
+  }
+  .tab_box {
+    visibility: hidden;
+    padding:20px;
+  }
+  .tab_box.on {
+    visibility: visible;
+  }
+  .tab_wrap {
+    text-align:center;
+  }

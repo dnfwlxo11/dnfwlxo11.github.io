@@ -28,6 +28,13 @@
             cafiName.push('cafi_proj_' + i + '.jpg');
         }
 
+        // 카피 프로젝트
+        var cafi_iot_Name = [];
+
+        for (var i = 1; i <= 17; i++) {
+            cafi_iot_Name.push('cafi_iot_proj_' + i + '.jpg');
+        }
+
         // I-tub 프로젝트
         var itubName = [];
 
@@ -46,6 +53,12 @@
     <div style="text-align: center;margin: auto 0px;">
         <form action='/cafi_proj' method='post'>
             <input type='submit' onclick="sendFilename('/send_fileName', cafiName)" value='카피 프로젝트 보기' style="height: 100px;width: 200px;">
+        </form>
+
+        &nbsp;
+
+        <form action='/cafi_iot_proj' method='post'>
+            <input type='submit' onclick="sendFilename('/send_fileName', cafi_iot_Name)" value='카피 (IoT와 함께) 프로젝트 보기' style="height: 100px;width: 200px;">
         </form>
 
         &nbsp;

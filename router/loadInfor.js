@@ -15,12 +15,17 @@ router.post('/send_fileName', function(req, res){
 });
 
 router.post('/cafi_proj', function (req, res) {
-    res.render('../public/cafi_proj.ejs', {data:fileName});
+    res.render('../public/view/cafi_proj.ejs', {data:fileName});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
+router.post('/cafi_iot_proj', function (req, res) {
+    res.render('../public/view/cafi_iot_proj.ejs', {data:fileName});
     //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
 });
 
 router.post('/itub_proj', function (req, res) {
-    res.render('../public/itub_proj.ejs', {data:fileName});
+    res.render('../public/view/itub_proj.ejs', {data:fileName});
     //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
 });
 
