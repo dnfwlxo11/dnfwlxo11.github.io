@@ -15,7 +15,7 @@
                 소개</button>
             <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트
                 PPT</button>
-            <button class='tab_menu_btn3 tab_menu_btn' type='button'>다른 프로젝트 보기</button>
+            <button class='tab_menu_btn3 tab_menu_btn' type='button' onclick="history.go(-1)">다른 프로젝트 보기</button>
         </div>
 
         <div class='tab_container'>
@@ -36,30 +36,6 @@
     </div>
 </body>
 
-<script>
-    function getBoxname(name) {
-        var name = name.split(' ');
-
-
-        var tab_menu_div = document.getElementsByClassName(name[1]);
-
-        for (var i = 0; i < tab_menu_div.length; i++) {
-            tab_menu_div[i] = tab_menu_div[i].classList.remove('on');
-        }
-
-        this.className += ' on';
-
-        var tab_box_div = document.getElementsByClassName('tab_box');
-
-        for (var i = 0; i < tab_box_div.length; i++) {
-            tab_box_div[i].style.visibility = 'hidden';
-            tab_box_div[i].classList.remove('on');
-        }
-
-        this.className += ' on';
-        var tmp = 'tab_box' + name[0][name[0].length - 1]
-        document.getElementsByClassName(tmp)[0].style.visibility = 'visible';
-    }
-</script>
+<script src='../js/tab_menu.js'></script>
 
 </html>
