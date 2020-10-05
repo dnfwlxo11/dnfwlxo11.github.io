@@ -23,11 +23,11 @@ button {
     color:#034f84;
   }
   .tab_box {
-    visibility: hidden;
+    display: none;
     padding:20px;
   }
   .tab_box.on {
-    visibility: visible;
+    display: block;
   }
   .tab_wrap {
     text-align:center;
