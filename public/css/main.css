@@ -9,6 +9,7 @@
 }
 
 .left_side {
+    vertical-align: top;
     float: left;
     width: 30%;
     height: 100%vh;
@@ -35,7 +36,7 @@
     border: 0;
     background-color: #034f84;
     width: 1px;
-    height: 850px;
+    height: 1700px;
 }
 
 .content_wrap {
