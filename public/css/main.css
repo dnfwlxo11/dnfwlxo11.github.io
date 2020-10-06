@@ -15,9 +15,14 @@
 }
 
 .right_side {
+    vertical-align: top;
     float: right;
     width: 60%;
     height: 100%vh;
+}
+
+.center_side {
+    float: left;
 }
 
 .line {
@@ -26,11 +31,14 @@
     height: 7px;
 }
 
-.content {
-    float: left;
-    text-align: left;
+.line2 {
+    border: 0;
+    background-color: #034f84;
+    width: 1px;
+    height: 850px;
 }
 
 .content_wrap {
+    float: left;
     text-align: left;
 }
