@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대인이의 포트폴리오</title>
-    <link rel="stylesheet" type="text/css" href="../css/tab_menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/proj.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
 <body onload="getBox(getCookie('tab_num'))">
-    <script>        
+    <script>
         // 카피 프로젝트
         var cafiName = [];
 
@@ -48,7 +48,8 @@
         <div class='tab_menu'>
             <button class='tab_menu_btn1 tab_menu_btn on' type='button'
                 onclick="getBoxname(this.className);document.cookie = 'tab_num=1';">자기소개</button>
-            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className);document.cookie = 'tab_num=2;max-age=3600';">프로젝트
+            <button class='tab_menu_btn2 tab_menu_btn' type='button'
+                onclick="getBoxname(this.className);document.cookie = 'tab_num=2;max-age=3600';">프로젝트
                 보기</button>
             <button class='tab_menu_btn3 tab_menu_btn' type='button'
                 onclick="alert('dnfwlxo11@naver.com')">Contact</button>
@@ -86,6 +87,7 @@
             </div>
 
             <div class='tab_box2 tab_box'>
+                <div class='proj_box'>
                 <form action='/cafi_proj' method='post'>
                     <input type='submit' onclick=" sendFilename_POST('/send_fileName', cafiName)" value='카피 프로젝트 보기'
                 style="height: 100px;width: 200px;">
@@ -108,10 +110,23 @@
                 &nbsp;
 
                 <form action='/match_proj' method='post'>
-                    <input type='button' value='(추가 예정)' style="height: 100px;width: 200px;">
+                    <input type='button' value='화재 피해 예측 서비스&#13;(추가예정)' style="height: 100px;width: 200px;">
+                </form>
+
+                &nbsp;
+
+                <form action='/match_proj' method='post'>
+                    <input type='button' value='광주시 노령화 분석 및 미래 예측<br>;(추가예정)' style="height: 100px;width: 200px;">
+                </form>
+
+                &nbsp;
+
+                <form action='/match_proj' method='post'>
+                    <input type='button' value='관광 취약 도시 분석 및 제언&#13;(추가예정)' style="height: 100px;width: 200px;">
                 </form>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

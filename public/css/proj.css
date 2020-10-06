@@ -1,0 +1,60 @@
+button {
+    background:none;
+    border:0;
+    outline:0;
+    cursor:pointer;
+}
+
+.tab_menu {
+  display:flex;
+  display: inline-block;
+}
+
+.tab_menu_btn {
+  width:200px;
+  height:40px;
+  transition:0.3s all;
+  font-size: 15pt;
+}
+
+.tab_menu_btn.on {
+  border-bottom:2px solid #034f84;
+  font-weight:700;
+  color:#034f84;
+}
+
+.tab_menu_btn:hover {
+  color:#034f84;
+}
+
+.tab_box {
+  text-align: center;
+  display: none;
+  padding:20px;
+}
+
+.tab_box.on {
+  text-align: center;
+  display: block;
+}
+
+.tab_wrap {
+  text-align:center;
+  vertical-align: top;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.top_btn {
+  position: sticky;
+  right: 20px;
+  bottom: 20px;
+}
+
+.proj_box {
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+}
