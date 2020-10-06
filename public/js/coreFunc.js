@@ -42,6 +42,9 @@ function getCookie(name) {
 }
 
 function getBox(num) {
+    if (num==null)
+        return;
+        
     var tab_menu_div = document.getElementsByClassName('tab_menu_btn');
     var tab_box_div = document.getElementsByClassName('tab_box');
 
