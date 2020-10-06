@@ -2,10 +2,12 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 var load_infor = require('./loadInfor');
+var cookie = require('../public/js/coreFunc')
 
 router.get('/', function(req, res){
     console.log('/로 get 방식으로 접근');
-    //document.cookie['tab_num'] = 1;
+    //cookie.setCookie('tab_num', 1);
+    document.cookie = 'tab_num=1';
     res.sendFile(path.join(__dirname, '../public/index.html'));
 })
 

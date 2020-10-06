@@ -9,11 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 
-<body>
-    <script>
-        //setBox(document.cookie['tab_num']);
-        console.log(document.cookie);
-        
+<body onload="getBox(getCookie('tab_num'))">
+    <script>        
         // 카피 프로젝트
         var cafiName = [];
 
@@ -47,6 +44,7 @@
         <hr class='line'>
 
         <br>
+        
 
         <div class='tab_menu'>
             <button class='tab_menu_btn1 tab_menu_btn on' type='button'
