@@ -29,4 +29,19 @@ router.post('/itub_proj', function (req, res) {
     //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
 });
 
+router.post('/fire_proj', function (req, res) {
+    res.render('../public/view/fire_proj.ejs', {data:fileName});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
+router.post('/elder_proj', function (req, res) {
+    res.render('../public/view/elder_proj.ejs', {data:fileName});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
+router.post('/travel_proj', function (req, res) {
+    res.render('../public/view/travel_proj.ejs', {data:fileName});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
 module.exports = router;
