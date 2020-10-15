@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카피 (IoT와 함께) 프로젝트 소개</title>
+    <link rel="stylesheet" type="text/css" href="../css/proj.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+    <div class='tab_wrap'>
+        <hr class='line'>
+
+        <br>
+
+        <div class='tab_menu'>
+            <button class='tab_menu_btn1 tab_menu_btn on' type='button' onclick="getBoxname(this.className)">프로젝트 소개</button>
+            <button class='tab_menu_btn2 tab_menu_btn' type='button' onclick="getBoxname(this.className)">프로젝트 PPT</button>
+            <button class='tab_menu_btn3 tab_menu_btn' type='button' onclick="history.go(-1)">다른 프로젝트 보기</button>
+        </div>
+
+        <div class='tab_container'>
+            <div class='tab_box1 tab_box on' style="text-align: center;">
+                <div class='content_wrap'>
+                    <div class='title'>
+                        <h1 style='color: #034f84;'>■ 프로그램 소개</h1>
+                        <h2 style='color: #034f84;'>주제 : 하나씩 사진에 라벨을 붙이는 것은 귀찮다, 자동으로 달고 검증만 하자</h2>
+                    </div>
+
+                    <div class='main'>
+                        <h3><br><br>『개발 동기 및 목적』</h3>
+                        <h4>
+                            ❏ 개발동기
+                            <br>오브젝트 디텍션에 관해 공부를 하다 사진에 하나하나 라벨링을 하는 과정이 너무 재미없고 반복되는 것이 지루했다.
+                            <br>그렇기 때문에 사진을 조금 라벨링 한 뒤에 모델을 만들어 그 모델이 알아서 라벨링을 하게하여 귀찮은 과정을 없애고자 하였다.
+                            <br><br>
+                            ❏ 개발목적
+                            <br>- 오브젝트 디텍션에 관련된 프로젝트에서 7~80%의 시간을 차지한다는 라벨링 과정을 건너 뛰기 위해
+                            <br>- 하나하나 라벨링 하는 것보다 에러가 발생하더라도 간단히 할 수 있는 검증단계만 진행하기 위해
+                        </h4>
+
+                        <h3><br>『기대효과 및 활용방안』</h3>
+                        <h4>
+                            ❏ 기대효과
+                            <br>- 모든 물체에 대해 라벨링을 할 수는 없겠지만 사용하면 할 수록 기본 베이스 모델이 업그레이드 되어 좋은 성능을 보여줄 것
+                            <br>- 라벨링의 시간을 단축시켜 그 시간을 다른 중요한 일정에 보탤 수 있을 것
+                            <br><br>
+                            ❏ 활용방안
+                            <br>- 꼭 서비스 형식이 아닌 개인이 만들어둔 모델이 있으면 그 모델을 업그레이드 하기위한 데이터를 얻기 위해 사용 가능
+                            <br>- 여러 물체를 감지하는 모델을 만든 뒤, 그것을 자동 라벨링 서비스 형식으로 배포 가능
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class='tab_box2 tab_box' style="text-align: center;">
+                <h1>Yolo 기반의 자동 라벨링 사이트</h1>
+                <!--<% for(var i=0;i<data.length;i++){ %>
+                    <img src='../imgs/travel_proj/<%=data[i]%>' width='70%' style='vertical-align: middle;border: 1px solid #888888;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+                <% } %>-->
+                내용 추가 중
+                <br><br><br>
+                <input class='top_btn' type='image' src='../../imgs/top_btn.jpg' onclick="javascript:window.scrollTo(0,0)" height="50px" width="50px">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src='../js/coreFunc.js'></script>
+
+</html>

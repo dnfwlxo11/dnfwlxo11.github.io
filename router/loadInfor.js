@@ -44,4 +44,9 @@ router.post('/travel_proj', function (req, res) {
     //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
 });
 
+router.post('/autoLabel_proj', function (req, res) {
+    res.render('../public/view/autoLabel_proj.ejs', {data:'None'});
+    //res.sendFile(path.join(__dirname, '../public/copy_proj.html'));
+});
+
 module.exports = router;
