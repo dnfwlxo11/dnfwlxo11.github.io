@@ -2,238 +2,431 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대인이의 포트폴리오</title>
-    <link rel="stylesheet" type="text/css" href="../css/proj.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css" />
+
 </head>
 
-<body onload="getBox(getCookie('tab_num'))">
-    <script>
-        // 카피 프로젝트
-        var cafiName = [];
+<body>
+	<header>
+		안녕하세요 <strong>임대인</strong>입니다.
+	</header>
 
-        for (var i = 1; i <= 15; i++) {
-            cafiName.push('cafi_proj_' + i + '.jpg');
-        }
+	<nav id='nav-div'>
+		<h1><a href="https://github.com/dnfwlxo11" target="_blank" class="nav_main">DaeChu</a></h1>
+		<div class='nav-items'>
+			<ul class='nav-ul'>
+				<li class='nav-item'>
+					<a class='nav-link' href='#summary'>Summary</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href="#project">Project</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href="#stack">Stack</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href="#contact">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<main>
+		<section class='section_' id='summary'>
+			<div class='wrapper'>
+				<h2>제가 누구냐구요?</h2>
+				<p class='content'>
+					안녕하세요. <br>
+					끊임없이 배우며 즐거움을 얻고 <br>
+					매일 성장하기위해 노력하는 임대인입니다.
+				</p>
+			</div>
+		</section>
+		<section class='section_' id='project'>
+			<div class='wrapper'>
+				<h2>무엇을 해봤냐구요?</h2>
+				<p>여기저기 화려한 것을 주워오는 것보다 습득과 응용을 위주로 프로젝트를 진행하였습니다.<br>(제목에 커서를 올렸을때 손가락이 생긴다면 github에서 소스코드를 보실 수 있습니다.)
+				</p>
+				<table class="table">
+					<div class='table-wrapper'>
+						<tdead>
+							<tr>
+								<td class="table-project">프로젝트</td>
+								<td class='table-intro'>소개</td>
+								<td>기간 및 담당역할</td>
+								<td class="text-preview">추가 정보 <br> (아직 내용 추가중)</td>
+							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>I-Tub</td>
+									<td>
+										<a class='project_link' href="https://github.com/Ultimate-ItubProject/Itub_Web" target="_blank" >
+											<div><strong>IoT, AI를 접목한 맞춤 샤워 서비스</strong></div>
+											<div class='hashtag'>
+												#IoT #AI분류모델 #웹서비스
+											</div>
+											<div>
+												<span class="badge">Node.js</span>
+												<span class="badge">MySQL</span>
+												<span class="badge">Python(sikit-learn)</span>
+												<span class="badge">HTML</span>
+												<span class="badge">JavaScript</span>
+												<span class="badge">라즈베리파이</span>
+											</div>
+										</a>
+									</td>
+									<td>
+										<div>(3M/M)</div>
+										<div>백엔드, AI모델, IoT연동 개발</div>
+									</td>
+									<td>
+										<img src="../imgs/preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												<span class='modal-close' onclick="modal_close()">&times;</span>
+												<div class='project_summary'>
+													<h1 style="font-size: 40px;">I-Tub</h1>
+													<img class='proj_img' src="./proj_img/itub_img.png" alt="i-tub 대표이미지1">
+													<img class='proj_img' src="./proj_img/itub_img2.png" alt="i-tub 대표이미지2"> <br><br>
+													진행 기간 : 2020/04/20 ~ 2020/06/25 <br>
+													프로젝트 설명 : 웹을 통해 각종 센서들을 제어하고 AI모델을 사용해 본인에게 알맞는 샤워 환경을 세팅하는 서비스 <br>
+													담당 역할 : IoT 센서 데이터를 웹에서 처리하는 백엔드 개발을 맡았으며 예측을 할 AI 모델 작성도 함께 하였습니다. <br>
+													홈페이지 : <a href="https://i-tub.herokuapp.com/">	https://i-tub.herokuapp.com/</a> <br>
+													사용 기술 : Node.js (웹), Python (IoT 센서제어, AI 모델), MySQL (사용자 db) <br><br>
+													끝내고보니 아쉽네 : 
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>카피</td>
+									<td>
+										<a class='project_link'
+											href='https://github.com/dnfwlxo11/CategorizingFish_ChosunUniv_fallsemesterProject' target="_blank" >
+											<div><strong>어민들을 위한 병어 자동 분류 서비스</strong></div>
+											<div class='hashtag'>
+												#오브젝트디텍션 #IoT #웹서비스 #크롤링
+											</div>
+											<div>
+												<span class="badge">Flask</span>
+												<span class="badge">Python(inceptionV3)</span>
+												<span class="badge">HTML</span>
+												<span class="badge">라즈베리파이</span>
+											</div>
+										</a>
+									</td>
+									<td>
+										<div>(2M/M)</div>
+										<div>백엔드, AI모델, IoT연동 개발</div>
+									</td>
+									<td>
+										<img src="../imgs//preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												안녕하세요.
+												<span class='modal-close'>&times;</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>매치메이커</td>
+									<td>
+										<a class='project_link'
+											href='https://github.com/dnfwlxo11/military-sports-matchmaker' target="_blank" >
+											<div><strong>군인들을 위한 전투 체육 매칭 어플리케이션</strong></div>
+											<div class='hashtag'>
+												#안드로이드 #어플리케이션 #매칭
+											</div>
+											<div>
+												<span class="badge">Android</span>
+												<span class="badge">Node.js</span>
+											</div>
+										</a>
+									</td>
+									<td>
+										<div>(0.5M/M)</div>
+										<div>백엔드, UI</div>
+									</td>
+									<td>
+										<img src="../imgs//preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												안녕하세요.
+												<span class='modal-close'>&times;</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>FPS</td>
+									<td>
+										<div><strong>화재 피해량 예측</strong></div>
+										<div class='hashtag'>
+											#AI분류모델 #크롤링
+										</div>
+										<div>
+											<span class="badge">Python(sikit-learn)</span>
+										</div>
+									</td>
+									<td>
+										<div>(0.5M/M)</div>
+										<div>AI모델, 데이터분석</div>
+									</td>
+									<td>
+										<img src="../imgs//preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												안녕하세요.
+												<span class='modal-close'>&times;</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>고령화</td>
+									<td>
+										<div><strong>광주시 고령화 문제 분석 및 예측</strong></div>
+										<div class='hashtag'>
+											#AI회귀모델 #크롤링
+										</div>
+										<div>
+											<span class="badge">Python(sikit-learn)</span>
+										</div>
+									</td>
+									<td>
+										<div>(1M/M)</div>
+										<div>AI모델, 데이터분석</div>
+									</td>
+									<td>
+										<img src="../imgs//preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												안녕하세요.
+												<span class='modal-close'>&times;</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>골목여행</td>
+									<td>
+										<div><strong>관광 취약 도시 분석 및 정치적</strong></div>
+										<div class='hashtag'>
+											#AI회귀모델 #크롤링
+										</div>
+										<div>
+											<span class="badge">Python(sikit-learn)</span>
+										</div>
+									</td>
+									<td>
+										<div>(0.5M/M)</div>
+										<div>AI모델, 데이터분석</div>
+									</td>
+									<td>
+										<img src="../imgs//preview.png" alt="preview" style="width: 50px;height: 50px;"
+											onclick="modal_open()">
+										<div id='project-modal' class='modal'>
+											<div class='modal-content'>
+												안녕하세요.
+												<span class='modal-close'>&times;</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+					</div>
+				</table>
+			</div>
+		</section>
+		<section class='section_' id='stack'>
+			<div class='wrapper'>
+				<h2>무엇을 쓸 줄 아냐구요?</h2>
+				<p><strong>튜토리얼하고 진짜 내 것인줄 아는 사람이 되지 않으려 노력 중입니다.</strong></p>
+				<table class="table table-stacks">
+					<tdead>
+						<tr>
+							<td class='table-name'>기술명</td>
+							<td class='table-img'>로고</td>
+							<td class='table-content'>활용 수준</td>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>JavaScript</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//js.png" alt="JavaScript">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>ES6 문법과 Ajax 통신을 다룰 수 있습니다. 복잡한 구현체를 구현 가능한
+										수준은 아니지만 구현된 코드를 보며 원리를 이해하고
+										수정하거나 라이브러리를 가져와 알맞게 사용 가능합니다
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Node.js</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//nodejs.png" alt="Node.js">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>Express를 활용하여 웹 개발 프레임워크를 만들 수 있으며
+										, DB와 연동하여 CRUD 기능, RESTFul API 서버를 만들 수 있습니다.
+										또한 작게나마 웹 구현부터 배포까지의 과정을 경험해봤습니다.
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>C++<br>Python<br>java<br>Html+Css</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//language.png" alt="language">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>다음의 언어들의 기본 문법을 다룰 수 있으며 작성된 코드를 보며 원리를 이해하고 알맞게 응용할 수 있습니다.
+									</span>
+								</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+		</section>
+		<section class='section_' id='stacks_2'>
+			<div class='wrapper'>
+				<h2>궁금하고 필요해서 공부해 봤어요.</h2>
+				<p><strong>기술 스택이라 쓰기에는 부끄럽지만 말하고 싶었어요.<br>넘치는 호기심을 주체할 수 없었어요.</strong></p>
+				<table class="table table-stacks">
+					<tdead>
+						<tr>
+							<td class='table-name'>기술명</td>
+							<td class='table-img'>로고</td>
+							<td class='table-content'>활용 수준</td>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Flask</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//flask.png" alt="Flask">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>텐서플로를 다루며 여러 토이프로젝트에 사용했으며 간단한 API 서버 구현 및 AI 추론 서버로 사용할 수 있습니다.
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>MySQL</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//mysql.png" alt="MySQL">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>기본적인 SQL 문법을 다룰 수 있으며
+										웹과 연동하여 회원 정보, 세션 정보를 저장하는 용도로 사용해보았습니다.
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Tensorflow</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//tf.png" alt="Tensorflow">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>기본적인 텐서플로를 이해하고 있으며 모델을 작성할 수 있습니다.
+										복잡한 응용까지는 못하나 관련 자료, 논문을 보며 이해하고 구현할 수 있도록 노력하고 있습니다.
+										여러 토이프로젝트를 진행하며 텍스트, 이미지 분야에 대한 이해를 넓히고 있습니다.
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Docker</td>
+								<td>
+									<div class='stack-img'>
+										<img src="../imgs//docker.png" alt="Docker">
+									</div>
+								</td>
+								<td class="table-content">
+									<span>도커의 기본적인 사용방법을 다룰 수 있으며 여러 컨테이너들을 엮는 docker-compose
+										를 사용하여 개발 환경을 구성할 수 있습니다.
+									</span>
+								</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+		</section>
+		<section class='section_' id='contact'>
+			<div class='wrapper'>
+				<h2>어디로 연락하면 되냐구요?</h2>
+				<div class="contact-box">
+					<div class="contact-top">
+						<h1>임 대 인 </h1>
+						<img src="../imgs//face.png" />
+					</div>
+					<div class='contact-bottom'>
+						<div class="contact-list">
+							<ul class="contact-infor">
+								<li>
+									<span>
+										Email :
+										<a href="mailto:dnfwlxo11@naver.com">
+											<strong>dnfwlxo11@naver.com</strong>
+										</a>
+									</span>
+								</li>
+								<li>
+									<span>
+										Phone :
+										<strong>010-xxxx-xxxx</strong>
 
-        // 카피 프로젝트
-        var cafi_iot_Name = [];
-
-        for (var i = 1; i <= 17; i++) {
-            cafi_iot_Name.push('cafi_iot_proj_' + i + '.jpg');
-        }
-
-        // I-tub 프로젝트
-        var itubName = [];
-
-        for (var i = 1; i <= 47; i++) {
-            itubName.push('itub_proj_' + i + '.jpg');
-        }
-
-        // 매치메이커 프로젝트
-        var matchName = [];
-
-        for (var i = 1; i <= 15; i++) {
-            matchName.push('match_proj_' + i + '.jpg');
-        }
-
-        // 화재 피해 분석 및 예측 프로젝트
-        var fireName = [];
-
-        for (var i = 1; i <= 30; i++) {
-            fireName.push('fire_proj_' + i + '.jpg');
-        }
-
-        // 광주시 고령화 문제 분석 프로젝트
-        var elderName = [];
-
-        for (var i = 1; i <= 29; i++) {
-            elderName.push('elder_proj_' + i + '.jpg');
-        }
-
-        // 관광 취약도시 분석 및 대책 마련 프로젝트
-        var travelName = [];
-
-        for (var i = 1; i <= 30; i++) {
-            travelName.push('travel_proj_' + i + '.jpg');
-        }
-    </script>
-
-    <div class='tab_wrap'>
-        <div>
-            <h6 style="font-size: 8pt;text-align:left;">1920*1080 환경에 맞춰 보시면 더 편하게 보실 수 있습니다.</h6>
-            <h2>임대인의 포트폴리오 <a href='http://daein-portfolio.herokuapp.com/' target='_brank'>( 바로가기 )</a></h2>
-            <hr class='line'>
-        </div>
-
-        <br>
-
-        <div class='tab_menu'>
-            <button class='tab_menu_btn1 tab_menu_btn on' type='button'
-                onclick="getBoxname(this.className);document.cookie = 'tab_num=1';">자기소개</button>
-            <button class='tab_menu_btn2 tab_menu_btn' type='button'
-                onclick="getBoxname(this.className);document.cookie = 'tab_num=2;max-age=3600';">프로젝트
-                보기</button>
-            <button class='tab_menu_btn3 tab_menu_btn' type='button'
-                onclick="alert('dnfwlxo11@naver.com')">Contact</button>
-        </div>
-
-        <br><br><br><br><br><br>
-
-        <div class='tab_container' style="text-align: center;">
-            <div class='tab_box1 tab_box on'>
-                <div class='left_side'>
-                    <div class='infor_div'>
-                        <br><br><br>
-                        <div class='name_div'>
-                            <h3>임대인</h3>
-                            <h4>조선대학교 / 컴퓨터공학과</h4>
-                        </div>
-
-                        <br><br>
-                        <a href='https://github.com/dnfwlxo11' target='_brank'>github.com/dnfwlxo11</a>
-
-                        <br><br><br>
-                        <!--010-6817-0429-->
-                        <br>
-                        dnfwlxo11@naver.com
-
-                        <br><br><br>
-                        <hr>
-
-                        <br><br>
-                        <h4 style="color: #034f84;">기술 스택</h4>
-                        <h5>언어 : C++, Java, Python, Javascript(ES6)</h5>
-                        <h5>WAS : Node.js(express)</h5>
-                        <h5>AI : tensorflow</h5>
-                        <h5>ETC : MySQL</h5>
-                    </div>
-                </div>
-
-                <div class='center_side'>
-                    <hr class='line2'>
-                </div>
-
-                <div class='right_side'>
-                    <div class='content_wrap'>
-                        <h3 style='color: #034f84;'>소개</h3>
-                        <h4>안녕하세요 신입 개발자를 희망하는 임대인입니다. 백엔드, 빅데이터 분석, 인공지능 분야를 공부했습니다.</h4><br>
-                        <br><br>
-                        <h3 style='color: #034f84;'>포트폴리오 요약</h3>
-                        <h4>사용자 맞춤 샤워 서비스 제작 - Python, Node.js(Javascript)</h4>
-                        <h5>- 샤워 환경 예측 모델 제작 및 IoT 서비스를 위한 웹페이지 백엔드 제작</h5>
-                        <h5><a
-                                href='https://github.com/Ultimate-ItubProject/Itub_Web'>(https://github.com/Ultimate-ItubProject/Itub_Web)</a>
-                        </h5>
-                        <br>
-                        <h4>병걸린 물고기 분류 웹사이트 제작 - Python, Django</h4>
-                        <h5>- 물고기 분류 모델 제작 및 분류 서비스를 위한 웹페이지 제작</h5>
-                        <h5><a
-                                href='https://github.com/dnfwlxo11/CategorizingFish_ChosunUniv_fallsemesterProject'>(https://github.com/dnfwlxo11/CategorizingFish_ChosunUniv_fallsemesterProject)</a>
-                        </h5>
-                        <br>
-                        <h4>병걸린 물고기 분류 모델과 IoT를 결합한 시제품 제작 - Python</h4>
-                        <h5>- 물고기 분류 모델 제작 및 IoT 서비스를 위한 시제품 제작</h5>
-                        <br>
-                        <!--
-                        <h4>YoloV3 자동 라벨링 사이트(물고기 전용) - YoloV3, Node.js(Javascript)</h4>
-                        <h5>- YoloV3기반의 이미지 디텍트를 위한 모델 제작, 서비스를 위한 웹페이지 제작</h5>
-                        <h5><a
-                                href='https://github.com/dnfwlxo11/YoloV3_Auto_LabelingPage'>(https://github.com/dnfwlxo11/YoloV3_Auto_LabelingPage)</a>
-                        </h5>
-                        <br>
-                        -->
-                        <h4>군인들을 위한 전투 체육 매치메이커 - Android</h4>
-                        <h5>- 어플리케이션 ux/ui 제작</h5>
-                        <h5><a
-                                href='https://github.com/dnfwlxo11/military-sports-matchmaker'>(https://github.com/dnfwlxo11/military-sports-matchmaker)</a>
-                        </h5>
-                        <br>
-                        <h4>화재 피해 예측 모델 제작 - Python</h4>
-                        <h5>- 화재 피해 예측 모델 제작</h5>
-                        <br>
-                        <h4>광주시 고령화 문제 분석 및 예측 - Python</h4>
-                        <h5>- 시계열 데이터 분석을 통한 예측</h5>
-                        <br>
-                        <h4>관광취약 도시 분석 및 정책 제언 - Python</h4>
-                        <h5>- 관광취약도시 예측 모델 제작</h5>
-                        <br>
-                        <h4>TCP/IP 소켓통신을 이용한 채팅 겸 퀴즈 프로그램 제작 - Java</h4>
-                        <h5>- 통신을 위한 코드 작성 및 JavaFX 기반의 UI 제작</h5>
-                        <br>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='tab_box2 tab_box'>
-                <div class='proj_box'>
-
-                    <form action='/itub_proj' method='post'>
-                        <input type='submit' onclick=" sendFilename_POST('/send_fileName', itubName)" value='I-Tub'
-                            style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/cafi_proj' method='post'>
-                        <input type='submit' onclick=" sendFilename_POST('/send_fileName', cafiName)" value='카피'
-                            style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/cafi_iot_proj' method='post'>
-                        <input type='submit' onclick="sendFilename_POST('/send_fileName', cafi_iot_Name)"
-                            value='카피 (IoT와 함께)' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/fire_proj' method='post'>
-                        <input type='submit' onclick=" sendFilename_POST('/send_fileName', fireName)" 
-                            value='화재 피해량 예측 서비스' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/elder_proj' method='post'>
-                        <input type='submit' onclick=" sendFilename_POST('/send_fileName', elderName)" 
-                            value='광주시 노령화 분석 및 미래 예측' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/travel_proj' method='post'>
-                        <input type='submit' onclick=" sendFilename_POST('/send_fileName', travelName)" 
-                            value='관광 취약 도시 분석 및 제언' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <!-- <form action='/autoLabel_proj' method='post'>
-                        <input type='submit' value='YoloV3 기반의 자동라벨링 사이트' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/match_proj' method='post'>
-                        <input type='button' value='군인들을 위한 전투체육 매치메이커 (추가예정)' style="height: 100px;width: 300px;">
-                    </form>
-
-                    &nbsp;
-
-                    <form action='/match_proj' method='post'>
-                        <input type='button' value='TCP/IP 소켓통신을 이용한 채팅 / 퀴즈 프로그램 (추가예정)'
-                            style="height: 100px;width: 300px;">
-                    </form> -->
-                </div>
-            </div>
-        </div>
-    </div>
+									</span>
+								</li>
+								<li>
+									<span>
+										Github :
+										<a href="https://github.com/dnfwlxo11" target="_blank" >
+											<strong>github.com/dnfwlxo11</strong>
+										</a>
+									</span>
+								</li>
+								<li>
+									<span>
+										Blog :
+										<a href="https://daechu.tistory.com" target="_blank" >
+											<strong>daechu.tistory.com</strong>
+										</a>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+		</section>
+	</main>
+	<script type='text/javascript' src="./script.js"></script>
 </body>
-
-<script src='./js/coreFunc.js'></script>
 
 </html>
