@@ -1,17 +1,19 @@
-var modal = document.getElementById('project-modal');
-var modal_btn = document.getElementById('modal-btn');
-var modal_close = document.getElementsByClassName('modal-close')[0];
+const modal_btn = document.getElementById('modal-btn');
+// const modal_close = document.getElementById('modal-close');
+let modal
 
-function modal_open() {
+function modal_open(name) {
+	modal = document.getElementById(name)
+
 	modal.style.display = "block";
 };
 
-modal_close.onclick = function() {
-	modal.style.display = "none";
-};
+// modal_close.onclick = () => {
+// 	modal.style.display = "none";
+// };
 
-window.onclick = function(event) {
-	if (event.target == modal) {
+window.onclick = (evt) => {
+	if (evt.target == modal) {
 		modal.style.display = "none";
 	}
 };
