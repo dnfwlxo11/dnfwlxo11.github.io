@@ -9,17 +9,18 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    
+                    <img :src="require('@/assets/jujube.png')" height="70%">
                 </div>
                 <div class="col-md-6">
                     <div class="content-top">
                         {{content['content']}}
                     </div>
-                    <div class="line pb-3"></div>
-                    <div class="content-bottom">
-                        <i class="mdi mdi-arrow-right-bottom-bold"></i> 기능: {{content['func']}} <br>
+                    <div class="line pb-3 mb-5"></div>
+                    <div class="content-bottom text-left">
+                        <span style="font-size: 1.25rem;"><strong>요약</strong></span> <br>
+                        <i class="mdi mdi-arrow-right-bottom-bold"></i><pre>기능    {{content['func']}}</pre> <br>
                         <i class="mdi mdi-arrow-right-bottom-bold"></i> Front: {{content['front']}} <br>
-                        <i class="mdi mdi-arrow-right-bottom-bold"></i> Back: {{content['front']}} <br>
+                        <i class="mdi mdi-arrow-right-bottom-bold"></i> Back: {{content['back']}} <br>
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@ export default {
         opacity: 0.2;
     }
 
-    .mdi {
-        font-size: 20px;
+    i {
+        font-size: 10px;
     }
 </style>

@@ -48,7 +48,7 @@
                                     <h4><strong>𝐃𝐁</strong></h4>
                                     <li>MySQL</li>
                                     <li>MongoDB</li> <br>
-                                    <h4><strong>𝐂𝐥𝐨𝐮𝐝</strong></h4>
+                                    <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                                     <li>Docker</li> <br>
                                 </div>
                                 <div class="col-md-6 pt-3">
@@ -59,7 +59,7 @@
                                     <li>React.js</li> <br>
                                     <h4><strong>𝐃𝐁</strong></h4>
                                     <li>PostgreSQL</li> <br>
-                                    <h4><strong>𝐂𝐥𝐨𝐮𝐝</strong></h4>
+                                    <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                                     <li>AWS</li> <br>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                             <h4><strong>𝐃𝐁</strong></h4>
                             <li>MySQL</li>
                             <li>MongoDB</li> <br>
-                            <h4><strong>𝐂𝐥𝐨𝐮𝐝</strong></h4>
+                            <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                             <li>Docker</li> <br>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <li>React.js</li> <br>
                                 <h4><strong>𝐃𝐁</strong></h4>
                                 <li>PostgreSQL</li> <br>
-                                <h4><strong>𝐂𝐥𝐨𝐮𝐝</strong></h4>
+                                <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                                 <li>AWS</li> <br>
                             </div>
                         </div>
@@ -103,20 +103,32 @@
                 <div class="line mb-3"></div>
                 <br><br>
 
-                <div class="">
+                <div class="mb-3">
                     <div class="ml-auto mr-auto">
                         <div class="mb-5">
                             <h1><strong>𝙒𝙃𝘼𝙏</strong></h1>
                         </div>
-                        <project v-for="(item, idx) in projects" :key="idx" :content="item"></project>
+                        <div class="row">
+                            <div class="col-2">
+
+                            </div>
+                            <div class="col-8 d-flex align-items-center justify-content-center">
+                                <i class="mdi mdi-chevron-left" @click="moveLeft"></i>
+                                <strong><span class="h-100" style="font-size: 25px;">{{currIdx + 1}} / {{projects.length}}</span></strong>
+                                <i class="mdi mdi-chevron-right" @click="moveRight"></i>
+                            </div>
+                            <div class="col-2 mb-3 text-right m-auto">
+                                <a :style="projectMode ? { color: 'red' } : { color: 'black' }" @click="changeMode"><strong>오래된 순</strong></a> / 
+                                <a :style="projectMode ? { color: 'black' } : { color: 'red' }" @click="changeMode"><strong>최신 순</strong></a>
+                            </div>
+                        </div>
+                        <project :content="projects[currIdx]"></project>
                     </div>
                 </div>
-                <div v-html="content"></div>
-
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" v-text="`${(((1+currIdx)/projects.length)*100).toFixed(2)}%`" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" :style="{width: `${((1+currIdx)/projects.length)*100}%`}"></div>
+                </div>
             </div>
-            <button @click="printt()">
-                wer
-            </button>
         </div>
     </div>
 </template>
@@ -131,19 +143,107 @@
         },
         data() {
             return {
-                projects: [{
+                projects: [
+                {
+                    name: '매치메이커',
+                    content: '내용',
+                    func: '안드로이드, 매칭 설계, 로그인 및 세션관리',
+                    period: '2017.10.02 ~ 2017.10.20',
+                    github: 'https://github.com/dnfwlxo11/military-sports-matchmaker',
+                    front: '안드로이드',
+                    back: 'Node.js',
+                    deploy: 'None',
+                    album: 'match'
+                },
+                {
+                    name: '알쏭',
+                    content: '내용',
+                    func: '익명 채팅, 소켓 통신',
+                    period: '2018.10.04 ~ 2018.10.30',
+                    github: 'https://github.com/dnfwlxo11/OpenSource_A-Team-FinalResult.git (버전관리 하지 않음)',
+                    front: '자바 스윙(Swing)',
+                    back: '자바',
+                    deploy: 'None',
+                    album: 'alsong'
+                },
+                {
+                    name: '카피',
+                    content: '내용',
+                    func: '영상처리, AI모델과 연동, IoT 센서와 연동',
+                    period: '2019.11.18 ~ 2019.12.09',
+                    github: '버전관리 하지 않음',
+                    front: 'Html',
+                    back: 'python',
+                    deploy: 'None',
+                    album: 'cofi'
+                },
+                {
                     name: 'I-Tub',
                     content: '내용',
                     func: '회원관리, AI모델과 연동, IoT 센서와 연동',
                     period: '2020.04.20 ~ 2020.06.25',
                     github: 'https://github.com/Ultimate-ItubProject/Itub_Web',
-                    front: 'html, css',
+                    front: 'Html, Css',
                     back: 'Node.js',
-                    deploy: 'Heroku'
+                    deploy: 'Heroku',
+                    album: 'itub'
+                },
+                {
+                    name: '캐치마인드',
+                    content: '내용',
+                    func: '소켓 통신, 실시간 대결',
+                    period: '2021.05.26 ~ 2021.06.09',
+                    github: 'https://github.com/dnfwlxo11/catchMind_with_Nodejs',
+                    front: 'Vue, Node.js (static)',
+                    back: 'Nodej.s',
+                    deploy: 'None',
+                    album: 'catchmind'
+                },
+                {
+                    name: '이거 어딨어?',
+                    content: '내용',
+                    func: '영상 처리, AI 모델',
+                    period: '2021.06.18 ~ 2021.07.09',
+                    github: 'https://github.com/dnfwlxo11/searchCertainFrame',
+                    front: 'Vue, Flask',
+                    back: 'Flask',
+                    deploy: 'Docker',
+                    album: 'sertainFrame'
+                },
+                {
+                    name: 'everyCanAI',
+                    content: '내용',
+                    func: '파일 업로드, 다운로드, AI 연동',
+                    period: '2021.11.04 ~ 2021.12.02',
+                    github: 'https://github.com/dnfwlxo11/everyCanAI',
+                    front: 'Vue, Node.js (static)',
+                    back: 'Flask (train), Node.js (image)',
+                    deploy: 'Docker',
+                    album: 'easyAI'
                 }],
-                content: '<strong class="text-danger">강조</strong> 약하게'
+                content: '<strong class="text-danger">강조</strong> 약하게',
+                currIdx: 0,
+                projectMode: true,
             }
         },
+        mounted() {
+            this.changeMode();
+        },
+        methods: {
+            moveLeft() {
+                if (this.currIdx == 0) return;
+                this.currIdx -= 1;
+            },
+
+            moveRight() {
+                if (this.currIdx == this.projects.length - 1) return;
+                this.currIdx += 1;
+            },
+            changeMode() {
+                this.projects = this.projects.reverse()
+                this.projectMode = !this.projectMode;
+            }
+        }
     }
 </script>
 
