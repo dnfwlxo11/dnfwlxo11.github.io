@@ -1,6 +1,6 @@
 <template>
     <div class="project">
-        <div class="card" style="height: 600px;">
+        <div class="card pb-5 pl-5 pr-5 m-auto" style="min-height: 750px;">
             <div class="row pt-5 justify-content-center">
                 <h2><strong>{{content['name']}}</strong></h2>
             </div>
@@ -26,16 +26,49 @@
                         <i class="mdi mdi-chevron-right" style="font-size: 30px;" @click="moveRight"></i>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="content-top">
-                        {{content['content']}}
+                <div class="col-md-6 pr-5">
+                    <div class="content-top text-left">
+                        <p v-html="content['content']" style="font-size: 20px; text-align: justify;"></p>
                     </div>
-                    <div class="line pb-3 mb-5"></div>
-                    <div class="content-bottom text-left">
-                        <span style="font-size: 1.25rem;"><strong>요약</strong></span> <br>
-                        <i class="mdi mdi-arrow-right-bottom-bold"></i><pre><span style="font-size: 25px;"><strong>기능</strong></span>    {{content['func']}}</pre> <br>
-                        <i class="mdi mdi-arrow-right-bottom-bold"></i> Front: {{content['front']}} <br>
-                        <i class="mdi mdi-arrow-right-bottom-bold"></i> Back: {{content['back']}} <br>
+                    <div class="line pb-3 mb-3"></div>
+                    <div class="content-bottom text-left ml-3 m-auto">
+                        <span style="font-size: 1.5rem;">👇</span> <br><br>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
+                                <span style="font-size: 20px;"><strong>Func</strong></span>
+                            </div>
+                            <div class="col-md-8 mt-auto">
+                                {{content['func']}} <br>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
+                                <span style="font-size: 20px;"><strong>Front</strong></span>
+                            </div>
+                            <div class="col-md-8 mt-auto">
+                                {{content['front']}} <br>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
+                                <span style="font-size: 20px;"><strong>Back</strong></span>
+                            </div>
+                            <div class="col-md-8 mt-auto">
+                                {{content['back']}} <br>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
+                                <span style="font-size: 20px;"><strong>Source</strong></span>
+                            </div>
+                            <div class="col-md-8 mt-auto">
+                                <strong><a class="source-link" :href="content['github']">소스코드 보기</a></strong> <br>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,20 +95,25 @@ export default {
         this.getImages();
     },
     methods: {
-        async getImages() {
+        getImages() {
             let name = this.content['album'];
 
-            for (let i=0;i<this.content['albumLen'];i++) {
-                this.images.push(await require(`@/assets/proj/${name}/${name}_${i+1}.jpg`));
-            }
+            for (let i=0;i<this.content['albumLen'];i++) this.images.push(require(`@/assets/proj/${name}/${name}_${i+1}.jpg`));
         },
         moveLeft() {
-            if (this.currPage == 0) return;
+            if (this.currPage == 0) {
+                this.currPage = this.images.length - 1;
+                return;
+            }
             this.currPage -= 1;
         },
 
         moveRight() {
-            if (this.currPage == this.images.length - 1) return;
+            if (this.currPage == this.images.length - 1) {
+                this.currPage = 0;
+                return;
+            }
+
             this.currPage += 1;
         },
     },
@@ -93,9 +131,5 @@ export default {
     .line {
         border-bottom: 2px solid grey;
         opacity: 0.2;
-    }
-
-    i {
-        font-size: 20px;
     }
 </style>
