@@ -109,15 +109,15 @@
                             <h1><strong>𝙒𝙃𝘼𝙏</strong></h1>
                         </div>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-4">
 
                             </div>
-                            <div class="col-8 d-flex align-items-center justify-content-center">
+                            <div class="col-4 d-flex align-items-center justify-content-center">
                                 <i class="mdi mdi-chevron-left" @click="moveLeft"></i>
                                 <strong><span class="h-100" style="font-size: 25px;">{{currIdx + 1}} / {{projects.length}}</span></strong>
                                 <i class="mdi mdi-chevron-right" @click="moveRight"></i>
                             </div>
-                            <div class="col-2 mb-3 text-right m-auto">
+                            <div class="col-4 mb-3 text-right m-auto">
                                 <a :style="projectMode ? { color: 'red' } : { color: 'black' }" @click="changeMode"><strong>오래된 순</strong></a> / 
                                 <a :style="projectMode ? { color: 'black' } : { color: 'red' }" @click="changeMode"><strong>최신 순</strong></a>
                             </div>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" v-text="`${(((1+currIdx)/projects.length)*100).toFixed(2)}%`" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" :style="{width: `${((1+currIdx)/projects.length)*100}%`}"></div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" :style="{width: `${((1+currIdx)/projects.length)*100}%`}"></div>
                 </div>
             </div>
         </div>
@@ -153,7 +153,8 @@
                     front: '안드로이드',
                     back: 'Node.js',
                     deploy: 'None',
-                    album: 'match'
+                    album: 'match',
+                    albumLen: 0,
                 },
                 {
                     name: '알쏭',
@@ -164,7 +165,8 @@
                     front: '자바 스윙(Swing)',
                     back: '자바',
                     deploy: 'None',
-                    album: 'alsong'
+                    album: 'alsong',
+                    albumLen: 0,
                 },
                 {
                     name: '카피',
@@ -175,7 +177,8 @@
                     front: 'Html',
                     back: 'python',
                     deploy: 'None',
-                    album: 'cofi'
+                    album: 'cofi',
+                    albumLen: 0,
                 },
                 {
                     name: 'I-Tub',
@@ -186,7 +189,8 @@
                     front: 'Html, Css',
                     back: 'Node.js',
                     deploy: 'Heroku',
-                    album: 'itub'
+                    album: 'itub',
+                    albumLen: 6,
                 },
                 {
                     name: '캐치마인드',
@@ -197,7 +201,8 @@
                     front: 'Vue, Node.js (static)',
                     back: 'Nodej.s',
                     deploy: 'None',
-                    album: 'catchmind'
+                    album: 'catchmind',
+                    albumLen: 0,
                 },
                 {
                     name: '이거 어딨어?',
@@ -208,7 +213,8 @@
                     front: 'Vue, Flask',
                     back: 'Flask',
                     deploy: 'Docker',
-                    album: 'sertainFrame'
+                    album: 'sertainFrame',
+                    albumLen: 0,
                 },
                 {
                     name: 'everyCanAI',
@@ -219,7 +225,8 @@
                     front: 'Vue, Node.js (static)',
                     back: 'Flask (train), Node.js (image)',
                     deploy: 'Docker',
-                    album: 'easyAI'
+                    album: 'easy',
+                    albumLen: 4
                 }],
                 content: '<strong class="text-danger">강조</strong> 약하게',
                 currIdx: 0,
