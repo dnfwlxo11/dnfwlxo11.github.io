@@ -84,18 +84,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="col-md-6 pt-3">
-                            <div class="card p-3">
-                                <h5><strong>공부! 관심!</strong></h5>
-                                <p class="imoji">🤨</p> <br>
-                                <h4><strong>𝐖𝐞𝐛</strong></h4>
-                                <li>Spring</li>
-                                <li>React.js</li> <br>
-                                <h4><strong>𝐃𝐁</strong></h4>
-                                <li>PostgreSQL</li> <br>
-                                <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
-                                <li>AWS</li> <br>
-                            </div>
+                        <div class="card p-3">
+                            <h5><strong>공부! 관심!</strong></h5>
+                            <p class="imoji">🤨</p> <br>
+                            <h4><strong>𝐖𝐞𝐛</strong></h4>
+                            <li>Spring</li>
+                            <li>React.js</li> <br>
+                            <h4><strong>𝐃𝐁</strong></h4>
+                            <li>PostgreSQL</li> <br>
+                            <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
+                            <li>AWS</li> <br>
                         </div>
                     </div>
                 </div>
@@ -160,7 +158,7 @@
                     content: '소켓 통신을 활용하여 방으로 분리된 카카오톡과 같은 <strong class="text-danger">채팅 환경 제공하고</strong> 예약어를 활용한 <strong class="text-danger">퀴즈 기능을 넣어 사용자끼리 간단하게 놀 수 있는 환경을 제공하는 프로그램</strong>',
                     func: '익명 채팅, 소켓 통신',
                     period: '2018.10.04 ~ 2018.10.30',
-                    github: 'https://github.com/dnfwlxo11/OpenSource_A-Team-FinalResult.git (버전관리 하지 않음)',
+                    github: 'https://github.com/dnfwlxo11/OpenSource_A-Team-FinalResult.git',
                     front: '자바 스윙(Swing)',
                     back: '자바',
                     deploy: 'None',
@@ -172,7 +170,7 @@
                     content: '실시간으로 물고기를 관찰하고 병어를 분류할 수 있는 분류 모델을 결합하여 양식장과 같은 어민들이 사용하여 <strong class="text-danger">병어를 분류하여 어업에 도움을 주는 서비스</strong>',
                     func: '스트리밍, 영상처리, AI모델과 연동, IoT 센서와 연동',
                     period: '2019.11.18 ~ 2019.12.09',
-                    github: '버전관리 하지 않음',
+                    github: 'https://github.com/dnfwlxo11',
                     front: 'Html',
                     back: 'python',
                     deploy: 'None',
@@ -265,10 +263,13 @@
 
     .top {
         height: 100px;
+        width: 100%;
     }
 
     .navbar {
         background-color: lightgray;
+        position: fixed;
+        z-index: 1;
     }
 
     li {
