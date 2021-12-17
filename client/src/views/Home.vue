@@ -210,8 +210,8 @@
                     front: 'Vue, Flask (static)',
                     back: 'Flask',
                     deploy: 'Docker',
-                    album: 'dummy',
-                    albumLen: 1,
+                    album: 'sertainFrame',
+                    albumLen: 3,
                 },
                 {
                     name: 'everyCanAI',
