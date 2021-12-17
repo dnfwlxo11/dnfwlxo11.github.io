@@ -210,7 +210,7 @@
                     front: 'Vue, Flask (static)',
                     back: 'Flask',
                     deploy: 'Docker',
-                    album: 'sertainFrame',
+                    album: 'certainFrame',
                     albumLen: 3,
                 },
                 {
