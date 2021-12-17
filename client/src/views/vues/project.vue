@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 m-auto mb-3">
-                    <div class="mb-3">
+                    <div class="thumbnail mb-3">
                         <span v-if="!images.length">
                             <div class="spinner-border mb-5" role="status">
                                 <span class="sr-only">Loading...</span>

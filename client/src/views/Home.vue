@@ -143,15 +143,15 @@
                 projects: [
                 {
                     name: '매치메이커',
-                    content: '군부대에 매일 전투체육이라는 활동을 하는데 마땅한 대전(운동) 상대를 찾는데 방송을 하지 않는이상 하기 힘듦, 이를 해결하기 위해 간단하게 <strong class="text-danger">대전(운동) 상대를 매칭 시켜주는 앱</strong>',
+                    content: '군부대에선 매일 전투체육이라는 활동을 하는데 마땅한 대전(운동) 상대를 찾는데 방송을 하지 않는이상 하기 힘듦, 이를 해결하기 위해 간단하게 <strong class="text-danger">대전(운동) 상대를 매칭 시켜주는 앱 <br>(군복무중 만들어 주제가 이러함)</strong>',
                     func: '안드로이드, 매칭 설계, 로그인 및 세션관리',
                     period: '2017.10.02 ~ 2017.10.20',
                     github: 'https://github.com/dnfwlxo11/military-sports-matchmaker',
                     front: '안드로이드',
                     back: 'Node.js',
                     deploy: 'None',
-                    album: 'dummy',
-                    albumLen: 1,
+                    album: 'match',
+                    albumLen: 5,
                 },
                 {
                     name: '알쏭',
@@ -162,8 +162,8 @@
                     front: '자바 스윙(Swing)',
                     back: '자바',
                     deploy: 'None',
-                    album: 'dummy',
-                    albumLen: 1,
+                    album: 'alsong',
+                    albumLen: 5,
                 },
                 {
                     name: '카피',
