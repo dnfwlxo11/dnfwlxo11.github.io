@@ -167,7 +167,7 @@
                 },
                 {
                     name: '카피',
-                    content: '실시간으로 물고기를 관찰하고 병어를 분류할 수 있는 분류 모델을 결합하여 양식장과 같은 어민들이 사용하여 <strong class="text-danger">병어를 분류하여 어업에 도움을 주는 서비스</strong>',
+                    content: '병어 발생 시 큰 피해를 입을 수 있는 양식장과 같은 곳에서 사용하여 <strong class="text-danger">어업에 도움을 주는 서비스</strong>, 실시간으로 현 상황을 볼 수 있으며 이미지 분류 모델이 있어 자동으로 분류를 해줌',
                     func: '스트리밍, 영상처리, AI모델과 연동, IoT 센서와 연동',
                     period: '2019.11.18 ~ 2019.12.09',
                     github: 'https://github.com/dnfwlxo11',
