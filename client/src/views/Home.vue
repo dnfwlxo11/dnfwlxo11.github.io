@@ -30,7 +30,7 @@
                 </div>
                 <br><br><br>
                 <div class="ml-auto mr-auto">
-                    <h5><strong>자바스크립트 풀스택 개발자</strong>로 일하고 있으며 <br> 자바, 클라우드도 관심있게 공부하고 있습니다.</h5>
+                    <h5><strong>자바스크립트 풀스택 개발자</strong>로 일하고 있으며 <br> 전반적인 IT 기술들을 항상 관심있게 바라보고 있습니다.</h5>
                 </div>
                 <br><br>
                 <div class="row d-md-flex d-none">
@@ -42,23 +42,25 @@
                                     <p class="imoji">😤</p> <br>
                                     <h4><strong>𝐖𝐞𝐛</strong></h4>
                                     <li>Node.js</li>
-                                    <li>Vue.js</li> <br>
+                                    <li>Vue.js</li>
+                                    <li>Electron (based Vue)</li> <br>
                                     <h4><strong>𝐀𝐩𝐩</strong></h4>
                                     <li>Flutter</li> <br>
                                     <h4><strong>𝐃𝐁</strong></h4>
-                                    <li>MySQL</li>
+                                    <li>MySQL (MariaDB)</li>
                                     <li>MongoDB</li> <br>
                                     <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
-                                    <li>Docker</li> <br>
+                                    <li>Docker</li>
+                                    <li>AWS</li> <br>
                                 </div>
                                 <div class="col-md-6 pt-3">
                                     <h5><strong>공부! 관심!</strong></h5>
                                     <p class="imoji">🤨</p> <br>
                                     <h4><strong>𝐖𝐞𝐛</strong></h4>
-                                    <li>Spring</li>
+                                    <li>TypeScript</li>
                                     <li>React.js</li> <br>
                                     <h4><strong>𝐃𝐁</strong></h4>
-                                    <li>PostgreSQL</li> <br>
+                                    <li>GraphQL</li> <br>
                                     <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                                     <li>AWS</li> <br>
                                 </div>
