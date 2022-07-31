@@ -33,40 +33,49 @@
                     <div class="line pb-3 mb-3"></div>
                     <div class="content-bottom text-left ml-3 m-auto">
                         <span style="font-size: 1.5rem;">👇</span> <br><br>
-                        <div class="row mb-2">
+                        <div class="row mb-2" v-if="content.func">
                             <div class="col-4">
                                 <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
                                 <span style="font-size: 20px;"><strong>Func</strong></span>
                             </div>
                             <div class="col-md-8 mt-auto">
-                                {{content['func']}} <br>
+                                {{content.func}} <br>
                             </div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-2" v-if="content.front">
                             <div class="col-4">
                                 <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
                                 <span style="font-size: 20px;"><strong>Front</strong></span>
                             </div>
                             <div class="col-md-8 mt-auto">
-                                {{content['front']}} <br>
+                                {{content.front}} <br>
                             </div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-2" v-if="content.back">
                             <div class="col-4">
                                 <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
                                 <span style="font-size: 20px;"><strong>Back</strong></span>
                             </div>
                             <div class="col-md-8 mt-auto">
-                                {{content['back']}} <br>
+                                {{content.back}} <br>
                             </div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-2" v-if="content.github">
                             <div class="col-4">
                                 <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
                                 <span style="font-size: 20px;"><strong>Source</strong></span>
                             </div>
                             <div class="col-md-8 mt-auto">
-                                <strong><a class="source-link" :href="content['github']">소스코드 보기</a></strong> <br>
+                                <strong><a class="source-link" :href="content.github">소스코드 보기</a></strong> <br>
+                            </div>
+                        </div>
+                        <div class="row mb-2" v-if="content.site">
+                            <div class="col-4">
+                                <i class="mdi mdi-arrow-right-bottom-bold" style="font-size: 15px;">&nbsp;</i>
+                                <span style="font-size: 20px;"><strong>Site</strong></span>
+                            </div>
+                            <div class="col-md-8 mt-auto">
+                                <strong><a class="source-link" :href="content.site">배포된 사이트</a></strong> <br>
                             </div>
                         </div>
                     </div>
