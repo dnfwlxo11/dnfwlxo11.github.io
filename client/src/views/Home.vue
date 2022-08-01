@@ -249,8 +249,8 @@
                     front: 'Vue.js, Node.js (static)',
                     back: 'FastAPI (train, inference), Node.js (Audio streaming, file)',
                     deploy: 'Docker',
-                    album: 'dummy',
-                    albumLen: 1,
+                    album: 'lyricsPlayer',
+                    albumLen: 4,
                     site: null,
                 },
                 {

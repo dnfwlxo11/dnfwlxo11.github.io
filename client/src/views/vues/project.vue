@@ -105,9 +105,9 @@ export default {
     },
     methods: {
         getImages() {
-            let name = this.content['album'];
+            let name = this.content.album;
 
-            for (let i=0;i<this.content['albumLen'];i++) this.images.push(require(`@/assets/proj/${name}/${name}_${i+1}.jpg`));
+            for (let i=0;i<this.content.albumLen;i++) this.images.push(require(`@/assets/proj/${name}/${name}_${i+1}.jpg`));
         },
         moveLeft() {
             if (this.currPage == 0) {
