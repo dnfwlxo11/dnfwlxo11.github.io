@@ -262,8 +262,8 @@
                     front: 'Vue.js',
                     back: 'None',
                     deploy: 'Github.io',
-                    album: 'dummy',
-                    albumLen: 1,
+                    album: 'pickMem',
+                    albumLen: 5,
                     site: 'https://dnfwlxo11.github.io/pickMem'
                 }],
             }
