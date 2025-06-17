@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 m-auto mb-3">
-                    <div class="thumbnail mb-3">
+                    <div class="thumbnail mb-3" style="max-height: 400px;aspect-ratio: 4 / 3;">
                         <span v-if="!images.length">
                             <div class="spinner-border mb-5" role="status">
                                 <span class="sr-only">Loading...</span>
@@ -18,7 +18,7 @@
                                 이미지 로딩 중
                             </div>
                         </span>
-                        <img v-else :src="images[currPage]" width="90%" style="border: 1px solid;">
+                        <img v-else :src="images[currPage]" style="border: 1px solid;object-fit: contain;width: 100%;height: 100%;">
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
                         <i class="mdi mdi-chevron-left" style="font-size: 30px;" @click="moveLeft"></i>

@@ -3,7 +3,7 @@
         <div class="top">
             <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3 w-100">
                 <span class="pl-3 text-left w-25"><img class="logo" :src="require('@/assets/jujube.png')"></span>
-                <span class="w-50" style="font-size: 2.5rem;"><strong>Hi, I'm Daein</strong></span>                
+                <span class="w-50" style="font-size: 2.5rem;"><strong>Hi, I'm Daein</strong></span>
                 <button class="navbar-toggler pr-3" type="button" data-toggle="collapse" data-target="#target"
                     aria-controls="target" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -11,8 +11,10 @@
                 <div class="collapse navbar-collapse" id="target">
                     <div class="pr-3 text-right ml-auto">
                         <a href="https://github.com/dnfwlxo11" class="nav-item mr-3"><i class="mdi mdi-github"></i></a>
-                        <a href="https://daechu.tistory.com/" class="nav-item mr-3"><i class="mdi mdi-post-outline"></i></a>
-                        <a href="mailto:dnfwlxo11@gmail.com" class="nav-item mr-3"><i class="mdi mdi-email-multiple-outline"></i></a>
+                        <a href="https://daechu.tistory.com/" class="nav-item mr-3"><i
+                                class="mdi mdi-post-outline"></i></a>
+                        <a href="mailto:dnfwlxo11@gmail.com" class="nav-item mr-3"><i
+                                class="mdi mdi-email-multiple-outline"></i></a>
                     </div>
                 </div>
             </nav>
@@ -116,18 +118,23 @@
                         </div>
                         <div id="carouselItems" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselItems" :data-slide-to="idx" :class="{'active': idx==0}" v-for="(project, idx) in projects" :key="idx" style="background-color: grey;height: 10px;"/>
+                                <li data-target="#carouselItems" :data-slide-to="idx" :class="{ 'active': idx == 0 }"
+                                    v-for="(project, idx) in projects" :key="idx"
+                                    style="background-color: grey;height: 10px;" />
                             </ol>
-                            
-                            <a class="carousel-control-prev" href="#carouselItems" role="button" data-slide="prev" style="width: 5%">
+
+                            <a class="carousel-control-prev" href="#carouselItems" role="button" data-slide="prev"
+                                style="width: 5%">
                                 <i class="mdi mdi-chevron-left" style="color: grey;"></i>
                             </a>
                             <div class="carousel-inner">
-                                <div :class="{'active': idx==0}" class="carousel-item" v-for="(project, idx) in projects" :key="idx">
+                                <div :class="{ 'active': idx == 0 }" class="carousel-item"
+                                    v-for="(project, idx) in projects" :key="idx">
                                     <project :content="project"></project>
                                 </div>
                             </div>
-                            <a class="carousel-control-next" href="#carouselItems" role="button" data-slide="next" style="width: 5%">
+                            <a class="carousel-control-next" href="#carouselItems" role="button" data-slide="next"
+                                style="width: 5%">
                                 <i class="mdi mdi-chevron-right" style="color: grey;"></i>
                             </a>
                         </div>
@@ -139,16 +146,16 @@
 </template>
 
 <script>
-    import Project from './vues/project.vue'
+import Project from './vues/project.vue'
 
-    export default {
-        name: 'Home',
-        components: {
-            Project
-        },
-        data() {
-            return {
-                projects: [
+export default {
+    name: 'Home',
+    components: {
+        Project
+    },
+    data() {
+        return {
+            projects: [
                 {
                     name: '매치메이커',
                     content: '군부대에선 매일 전투체육이라는 활동을 하는데 마땅한 대전(운동) 상대를 찾는데 방송을 하지 않는이상 하기 힘듦, 이를 해결하기 위해 간단하게 <strong class="text-danger">대전(운동) 상대를 매칭 시켜주는 앱 <br>(군복무중 만들어 주제가 이러함)</strong>',
@@ -265,96 +272,110 @@
                     album: 'pickMem',
                     albumLen: 5,
                     site: 'https://dnfwlxo11.github.io/pickMem'
-                }],
-            }
-        },
-        mounted() {
-            this.changeMode();
-        },
-        methods: {
-            changeMode() {
-                this.projects = this.projects.reverse()
-                this.projectMode = !this.projectMode;
-            }
+                },
+                {
+                    name: '띠부로그',
+                    content: '각종 띠부씰 수집기록을 기록하는 플랫폼',
+                    func: '브라우저 스토리지 기반의 동작',
+                    period: '2025.06.14 ~ ing',
+                    github: 'https://github.com/dnfwlxo11/ddibu_log',
+                    front: 'Nuxt3',
+                    back: 'None',
+                    deploy: 'Github.io',
+                    album: 'ddibuLog',
+                    albumLen: 3,
+                    site: 'https://ddibu-log.daein.dev'
+                }
+            ],
+        }
+    },
+    mounted() {
+        this.changeMode();
+    },
+    methods: {
+        changeMode() {
+            this.projects = this.projects.reverse()
+            this.projectMode = !this.projectMode;
         }
     }
+}
 </script>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        min-width: 480px;
-    }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 480px;
+}
 
-    .mdi {
-        font-size: 40px;
-    }
+.mdi {
+    font-size: 40px;
+}
 
-    .logo {
-        height: 40px;
-        width: 120px;
-    }
+.logo {
+    height: 40px;
+    width: 120px;
+}
 
-    .imoji {
-        font-size: 30px;
-    }
+.imoji {
+    font-size: 30px;
+}
 
-    .top {
-        height: 100px;
-        width: 100%;
-    }
+.top {
+    height: 100px;
+    width: 100%;
+}
 
-    .navbar {
-        background-color: lightgray;
-        position: fixed;
-        z-index: 1;
-    }
+.navbar {
+    background-color: lightgray;
+    position: fixed;
+    z-index: 1;
+}
 
-    li {
-        list-style: none;
-    }
+li {
+    list-style: none;
+}
 
-    .line {
-        border-bottom: 2px solid grey;
-        opacity: 0.2;
-    }
+.line {
+    border-bottom: 2px solid grey;
+    opacity: 0.2;
+}
 
-    .top img {
-        height: 100px;
-    }
+.top img {
+    height: 100px;
+}
 
-    .nav-item:link {
-        color: black;
-        text-decoration: none;
-    }
+.nav-item:link {
+    color: black;
+    text-decoration: none;
+}
 
-    .nav-item:visited {
-        color: black;
-        text-decoration: none;
-    }
+.nav-item:visited {
+    color: black;
+    text-decoration: none;
+}
 
-    .nav-item:hover {
-        color: grey;
-        text-decoration: underline;
-    }
+.nav-item:hover {
+    color: grey;
+    text-decoration: underline;
+}
 
-    .card {
-        border-radius: 30px;
-    }
+.card {
+    border-radius: 30px;
+}
 
-    .source-link:link {
-        text-decoration: blue;
-    }
+.source-link:link {
+    text-decoration: blue;
+}
 
-    .source-link:visited {
-        text-decoration: blue;
-    }
+.source-link:visited {
+    text-decoration: blue;
+}
 
-    .source-link:hover {
-        color: blue;
-        text-decoration: underline;
-    }
+.source-link:hover {
+    color: blue;
+    text-decoration: underline;
+}
 </style>
