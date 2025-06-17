@@ -44,28 +44,24 @@
                                     <p class="imoji">😤</p> <br>
                                     <h4><strong>𝐖𝐞𝐛</strong></h4>
                                     <li>Node.js</li>
-                                    <li>Vue.js</li>
-                                    <li>Electron (based Vue)</li> <br>
+                                    <li>Vue</li>
+                                    <li>React</li> <br>
                                     <h4><strong>𝐀𝐩𝐩</strong></h4>
                                     <li>Flutter</li> <br>
                                     <h4><strong>𝐃𝐁</strong></h4>
-                                    <li>MySQL (MariaDB)</li>
-                                    <li>Redis</li>
+                                    <li>MySQL</li>
                                     <li>MongoDB</li> <br>
                                     <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
-                                    <li>Docker</li>
-                                    <li>AWS</li> <br>
+                                    <li>Docker</li> <br>
                                 </div>
                                 <div class="col-md-6 pt-3">
                                     <h5><strong>공부! 관심!</strong></h5>
                                     <p class="imoji">🤨</p> <br>
                                     <h4><strong>𝐖𝐞𝐛</strong></h4>
-                                    <li>TypeScript</li>
-                                    <li>React.js</li> <br>
+                                    <li>Nuxt</li>
+                                    <li>Next</li> <br>
                                     <h4><strong>𝐀𝐩𝐩</strong></h4>
                                     <li>Flutter</li> <br>
-                                    <h4><strong>𝐃𝐁</strong></h4>
-                                    <li>GraphQL</li> <br>
                                     <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                                     <li>AWS</li> <br>
                                 </div>
@@ -80,12 +76,12 @@
                             <p class="imoji">😤</p> <br>
                             <h4><strong>𝐖𝐞𝐛</strong></h4>
                             <li>Node.js</li>
-                            <li>Vue.js</li> <br>
+                            <li>Vue</li> <br>
+                            <li>React</li> <br>
                             <h4><strong>𝐀𝐩𝐩</strong></h4>
                             <li>Flutter</li> <br>
                             <h4><strong>𝐃𝐁</strong></h4>
                             <li>MySQL</li>
-                            <li>Redis</li>
                             <li>MongoDB</li> <br>
                             <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                             <li>Docker</li> <br>
@@ -96,12 +92,10 @@
                             <h5><strong>공부! 관심!</strong></h5>
                             <p class="imoji">🤨</p> <br>
                             <h4><strong>𝐖𝐞𝐛</strong></h4>
-                            <li>Spring</li>
-                            <li>React.js</li> <br>
+                            <li>Nuxt</li> <br>
+                            <li>Next</li> <br>
                             <h4><strong>𝐀𝐩𝐩</strong></h4>
                             <li>Flutter</li> <br>
-                            <h4><strong>𝐃𝐁</strong></h4>
-                            <li>PostgreSQL</li> <br>
                             <h4><strong>𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭</strong></h4>
                             <li>AWS</li> <br>
                         </div>
