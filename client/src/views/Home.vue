@@ -274,6 +274,32 @@ export default {
                     site: 'https://dnfwlxo11.github.io/pickMem'
                 },
                 {
+                    name: '오로라',
+                    content: 'Nuxt 기반의 프로젝트를 분석하여 타 분야와 보다 나은 협업을 위한 프로젝트',
+                    func: 'Nuxt3 런타임 훅을 기반하여 분석',
+                    period: '2023.05.09 ~ 2023.05.23 (중단)',
+                    github: 'https://github.com/dnfwlxo11/nuxt3-project-manager',
+                    front: 'Nuxt3',
+                    back: 'None',
+                    deploy: null,
+                    album: 'aurora',
+                    albumLen: 3,
+                    site: null
+                },
+                {
+                    name: 'i18n-manage-tool',
+                    content: '다국어 지원 용이를 위한 툴',
+                    func: '일렉트론 기반의 기능 지원',
+                    period: '2023.12.14 ~ 2023.12.27 (중단)',
+                    github: 'https://github.com/dnfwlxo11/i18n-manage-tool',
+                    front: 'Vue3',
+                    back: 'Electron',
+                    deploy: null,
+                    album: "i18n-manage-tool",
+                    albumLen: 2,
+                    site: null
+                },
+                {
                     name: '띠부로그',
                     content: '각종 띠부씰 수집기록을 기록하는 플랫폼',
                     func: '브라우저 스토리지 기반의 동작',
