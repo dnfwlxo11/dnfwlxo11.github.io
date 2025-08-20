@@ -1,7 +1,7 @@
 export default function foreword() {
   return (
     <div className="w-[100%]">
-      <div className="h-[360px] flex flex-col justify-center items-start leading-[40px]">
+      <div className="flex flex-col justify-center items-start leading-[40px] my-[60px]">
         <div className="text-[30px] font-semibold">안녕하세요.</div>
         <div className="text-[30px] font-semibold">임대인 입니다.</div>
         <div className="mt-[20px]">
