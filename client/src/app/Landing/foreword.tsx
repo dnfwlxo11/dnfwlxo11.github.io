@@ -14,7 +14,7 @@ export default function foreword() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F1F3F5] px-[10px] py-[5px] rounded-[4px] flex justify-center items-center box-border w-fit">
+      <div className="bg-[#F1F3F5] px-[10px] py-[5px] pr-[5px] rounded-[4px] flex justify-center items-center box-border w-fit">
         <a href="https://github.com/dnfwlxo11" target="_blank">
           Github
         </a>
