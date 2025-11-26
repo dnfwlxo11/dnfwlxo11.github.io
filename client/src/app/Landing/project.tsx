@@ -17,14 +17,14 @@ export default function project() {
 
 
   return (
-    <div className="my-[30px]">
-      <div className="text-[24px] font-semibold">
+    <div className="my-[30px] mb-[60px]">
+      <div className="sm:text-[24px] text-[18px] font-semibold">
         개인 프로젝트
       </div>
-      <div className="my-[5px] mb-[20px]">
+      <div className="my-[5px] mb-[20px] sm:text-[22px] text-[16px]">
         대학생 시절부터 해왔던 보여주기위함보다 내가 필요하거나 해보고 싶어 진행했던 프로젝트입니다. <br />
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-[20px]">
+      <div className="grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-3 gap-[20px]">
         {projects.map((project, idx) => {
           return <div 
             key={idx} 
@@ -36,7 +36,7 @@ export default function project() {
             }}
           >
             <div className="mt-auto absolute bottom-[10px] left-0 w-full py-[5px] bg-[rgba(0,0,0,0.2)] text-[#f8f9fa]">
-              <div className="ml-[10px] leading-[18px] text-[14px] font-semibold">{project.name}</div>
+              <div className="stroke-black ml-[10px] leading-[18px] text-[14px] font-semibold">{project.name}</div>
               <div className="ml-[10px] leading-[12px] text-[10px] font-medium">{project.desc}</div>
             </div>
           </div>
