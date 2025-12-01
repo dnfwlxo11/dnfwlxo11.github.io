@@ -19,16 +19,38 @@
   }
 }
 
-body {
-  background: radial-gradient(circle at center,
-    rgba(150,200,255,0.7) 0%,
-    rgba(200,225,255,0.4) 35%,
-    rgba(255,255,255,1) 100%
-  );
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
 
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+body {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    rgba(150, 200, 255, 0.8) 0%,
+    rgba(200, 225, 255, 0.4) 35%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  transform-origin: center;
+  animation: move 2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;  
 }

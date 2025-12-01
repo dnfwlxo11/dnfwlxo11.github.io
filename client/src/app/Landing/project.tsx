@@ -28,7 +28,7 @@ export default function project() {
         {projects.map((project, idx) => {
           return <div 
             key={idx} 
-            className='aspect-[4/3] bg-[#F1F3F5] rounded-[8px] box-border p-[10px] relative cursor-pointer shadow-md bg-center'
+            className='aspect-[4/3] bg-[#F1F3F5] rounded-[8px] box-border p-[10px] relative cursor-pointer shadow-md bg-center hover:scale-102 transition-all duration-200'
             style={{
               backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url(/project/${project.id}/${project.id}_1.jpg)`,
               backgroundSize: 'contain',

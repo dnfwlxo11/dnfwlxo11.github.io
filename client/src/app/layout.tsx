@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={pretendard.className}>
+        <div className="bg"></div>
         {children}
       </body>
     </html>
