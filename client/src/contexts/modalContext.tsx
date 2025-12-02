@@ -1,5 +1,5 @@
 import { ComponentType, createContext, HTMLAttributes, PropsWithChildren, useMemo, useState } from "react";
-export type ModalComponent = ComponentType<undefined>
+export type ModalComponent = ComponentType<any>
 export type ModalProps = Record<string, undefined> | HTMLAttributes<HTMLDivElement>
 export type ModalsState = Array<{ Component: ModalComponent; props?: ModalProps; isOpen: boolean }>;
 
