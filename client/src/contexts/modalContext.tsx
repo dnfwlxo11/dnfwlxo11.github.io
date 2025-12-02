@@ -1,9 +1,12 @@
+'use client'
+
+import Modals from "@/component/Modals";
 import { ComponentType, createContext, HTMLAttributes, PropsWithChildren, useMemo, useState } from "react";
 export type ModalComponent = ComponentType<any>
 export type ModalProps = Record<string, undefined> | HTMLAttributes<HTMLDivElement>
 export type ModalsState = Array<{ Component: ModalComponent; props?: ModalProps; isOpen: boolean }>;
 
-export const ModalStateContext = createContext<ModalsState>([])
+export const ModalsStateContext = createContext<ModalsState>([])
 
 type ModalsDispatch = {
   onOpen: (Component: ModalComponent, props: ModalProps) => void;
@@ -55,12 +58,12 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useMemo(() => ({ onOpen, onClose }), [])
 
   return (
-    <ModalStateContext.Provider value={isOpen}>
+    <ModalsStateContext.Provider value={isOpen}>
       <ModalsDispatchContext.Provider value={dispatch}>
         {children}
         <Modals/>
       </ModalsDispatchContext.Provider>
-    </ModalStateContext.Provider>
+    </ModalsStateContext.Provider>
   )
 }
 
