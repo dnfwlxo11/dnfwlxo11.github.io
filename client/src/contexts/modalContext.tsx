@@ -9,13 +9,13 @@ export type ModalsState = Array<{ Component: ModalComponent; props?: ModalProps;
 export const ModalsStateContext = createContext<ModalsState>([])
 
 type ModalsDispatch = {
-  onOpen: (Component: ModalComponent, props: ModalProps) => void;
-  onClose: (Component: ModalComponent) => void;
+  open: (Component: ModalComponent, props: ModalProps) => void;
+  close: (Component: ModalComponent) => void;
 };
 
 export const ModalsDispatchContext = createContext<ModalsDispatch>({
-  onOpen: () => {},
-  onClose: () => {},
+  open: () => { console.log('open dispatch') },
+  close: () => { console.log('close dispatch') },
 });
 
 const disableScroll = () => {
@@ -33,11 +33,11 @@ const ableScroll = () => {
 };
 
 const ModalsProvider = ({ children }: PropsWithChildren) => {
-  const [isOpen, setIsOpen] = useState<ModalsState>([])
+  const [openedModals, setOpenedModal] = useState<ModalsState>([])
 
-  const onOpen = (Component: ModalComponent, props: ModalProps) => {
+  const open = (Component: ModalComponent, props: ModalProps) => {
     disableScroll()
-    setIsOpen((modals) => {
+    setOpenedModal((modals) => {
       const modalIdx = modals.findIndex((modal) => modal.Component === Component)
 
       if (modalIdx !== -1) {
@@ -50,17 +50,18 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
     })
   }
 
-  const onClose = (Component: ModalComponent) => {
+  const close = (Component: ModalComponent) => {
     ableScroll()
-    setIsOpen((modals) => modals.map((modal) => (modal.Component === Component ? { ...modal, isOpen: false } : modal)))
+    setOpenedModal((modals) => modals.map((modal) => (modal.Component === Component ? { ...modal, isOpen: false } : modal)))
   }
 
-  const dispatch = useMemo(() => ({ onOpen, onClose }), [])
+  const dispatch = useMemo(() => ({ open, close }), [])
 
   return (
-    <ModalsStateContext.Provider value={isOpen}>
+    <ModalsStateContext.Provider value={openedModals}>
       <ModalsDispatchContext.Provider value={dispatch}>
         {children}
+        {JSON.stringify(Modals) + '1'}
         <Modals/>
       </ModalsDispatchContext.Provider>
     </ModalsStateContext.Provider>

@@ -1,16 +1,18 @@
+'use client'
+
 import { useContext } from "react";
 import projectModal from '@/component/projectModal'
 import { ModalsStateContext, ModalsDispatchContext } from "@/contexts/modalContext"
 
 export const modals = {
-  projectModal: {}
+  projectModal,
 }
 
 const Modals = () => {
   const openedModals = useContext(ModalsStateContext);
-  const { onClose: close } = useContext(ModalsDispatchContext);
-
-  return openedModals.map((modal, index) => {
+  const { close } = useContext(ModalsDispatchContext);
+  
+  return openedModals.map((modal, idx) => {
     const { Component, props, isOpen } = modal;
     if (!props) return null;
 
@@ -27,7 +29,7 @@ const Modals = () => {
       onClose();
     };
 
-    return <Component key={index} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} {...rest} />;
+    return <Component key={idx} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} {...rest} />;
   });
 };
 
