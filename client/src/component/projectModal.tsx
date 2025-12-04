@@ -14,7 +14,6 @@ export default function Modal({ children, isOpen }: ModalType) {
     { isOpen ? 
       <div>
         {children}
-        12321312321
         <button onClick={() => close(projectModal)}>test</button>
       </div> : null
     }
