@@ -36,7 +36,7 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
   const [openedModals, setOpenedModal] = useState<ModalsState>([])
 
   const open = (Component: ModalComponent, props: ModalProps) => {
-    disableScroll()
+    // disableScroll()
     setOpenedModal((modals) => {
       const modalIdx = modals.findIndex((modal) => modal.Component === Component)
 
@@ -51,7 +51,7 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
   }
 
   const close = (Component: ModalComponent) => {
-    ableScroll()
+    // ableScroll()
     setOpenedModal((modals) => modals.map((modal) => (modal.Component === Component ? { ...modal, isOpen: false } : modal)))
   }
 

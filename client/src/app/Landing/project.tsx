@@ -1,4 +1,9 @@
+import SideBar from "@/component/sidebar"
+import useModal from "@/hooks/useModal"
+
 export default function project() {
+  const { openModal } = useModal()
+
   const projects = [
     { id: 'ddibuLog', name: '띠부로그', period_start: '2025-06-14', period_end: 'ing', src: '/project/ddibuLog/', imgLen: 5, desc: '띠부씰 수집가를 위한 사이트' },
     { id: 'i18n-manage-tool', name: '국제화 관리 툴', period_start: '2023-12-14', period_end: '2023-12-27 (중단)', src: '/project/i18n-manage-tool', imgLen: 2, desc: '구글 시트 기반의 다국어 관리 툴' },
@@ -13,8 +18,6 @@ export default function project() {
     { id: 'alsong', name: '알쏭', period_start: '2018-10-04', period_end: '2018-10-30', src: '/project/alsong', imgLen: 5, desc: '채팅 기반의 퀴즈 프로그램' },
     { id: 'match', name: '매치메이커', period_start: '2017-10-02', period_end: '2017-10-20', src: '/project/match', imgLen: 5, desc: '체육활동 대전상태 매칭 앱' },
   ]
-
-
 
   return (
     <div className="my-[30px] mb-[60px]">
@@ -34,6 +37,7 @@ export default function project() {
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat'
             }}
+            onClick={() => openModal(SideBar, {})}
           >
             <div className="mt-auto absolute bottom-[10px] left-0 w-full py-[5px] bg-[rgba(0,0,0,0.2)] text-[#f8f9fa]">
               <div className="stroke-black ml-[10px] leading-[18px] text-[14px] font-semibold">{project.name}</div>
