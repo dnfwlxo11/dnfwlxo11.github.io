@@ -11,11 +11,18 @@ export default function SideBar() {
   }
 
   return <div>
-    { isOpen('SideBar') ? 
-      <div className="h-dvh w-[300px] fixed right-0 top-0 z-10 bg-blue-300">
+    { isOpen('SideBar') && 
+      <div 
+        className={`
+          h-dvh w-[300px] fixed right-[-300px] top-0 z-10 bg-blue-300 
+          transition-all duration-300
+          ${isOpen("SideBar") ? "translate-x-0" : "translate-x-full"}
+        `}
+
+      >
         <div onClick={pushSide}>close</div>
         sideBar
-      </div> : null
+      </div>
     }
   </div>
 }
