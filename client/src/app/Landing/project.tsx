@@ -37,7 +37,7 @@ export default function project() {
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat'
             }}
-            onClick={() => openModal(SideBar, {})}
+            onClick={() => openModal(SideBar, { project })}
           >
             <div className="mt-auto absolute bottom-[10px] left-0 w-full py-[5px] bg-[rgba(0,0,0,0.2)] text-[#f8f9fa]">
               <div className="stroke-black ml-[10px] leading-[18px] text-[14px] font-semibold">{project.name}</div>
