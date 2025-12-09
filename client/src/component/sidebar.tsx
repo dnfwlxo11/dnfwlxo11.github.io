@@ -17,6 +17,8 @@ type ProjectDesc = {
   src: string | null,
   imgLen: number,
   desc: string,
+  descDetail: string[],
+  descImg: string[],
   stack: StackItem[]
 }
 
@@ -92,11 +94,13 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
             </div>
           </div>
         </div>
-        <div className="border-b border-[#ced4da] p-[10px] p-[20px_60px]">
-          project description <br /><br /><br />
-
-          프로젝트를 진행했습니다 <br />
-          얄리얄리얄라리
+        <div className="p-[10px] p-[20px_60px] overflow-auto">
+          {project.descImg.map((img, idx) => {
+            return <div key={idx} className="flex flex-col gap-[20px]">
+              <img src={img} alt={`${project.name}의 ${idx + 1}번째 사진`} />
+              {project.descDetail[idx]}
+            </div>
+          })}
         </div>
       </div>
     </div>
