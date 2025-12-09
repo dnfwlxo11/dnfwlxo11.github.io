@@ -62,7 +62,6 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
     <ModalsStateContext.Provider value={openedModals}>
       <ModalsDispatchContext.Provider value={dispatch}>
         {children}
-        {JSON.stringify(Modals) + '1'}
         <Modals/>
       </ModalsDispatchContext.Provider>
     </ModalsStateContext.Provider>

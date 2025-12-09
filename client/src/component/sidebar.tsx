@@ -1,6 +1,13 @@
 import { ModalsDispatchContext, ModalsStateContext } from "@/contexts/modalContext"
 import useModal from "@/hooks/useModal"
 import { useContext, useEffect, useState } from "react"
+import Badge from "./badge"
+
+type TechCategory = 'front' | 'back' | 'lang' | 'db'
+interface StackItem {
+  name: string,
+  type: TechCategory
+}
 
 type ProjectDesc = {
   id: string | null,
@@ -9,7 +16,8 @@ type ProjectDesc = {
   period_end: string,
   src: string | null,
   imgLen: number,
-  desc: string
+  desc: string,
+  stack: StackItem[]
 }
 
 export default function SideBar({ project }: { project: ProjectDesc }) {
@@ -30,7 +38,7 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
   }
 
   return <>
-    {isOpen && <div className="absolute h-[100%] w-[100%] left-0 top-0 z-10" onClick={() => setVisible(false)}></div>}
+    {isOpen && <div className="fixed h-[100%] w-[100%] left-0 top-0 z-10" onClick={() => setVisible(false)}></div>}
     <div
       onTransitionEnd={handleTransitionEnd}
       className={`
@@ -49,8 +57,8 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
         </div>
       </div>
       <div>
-        <div className="h-[200px] border-[#ced4da] border-b bg-contain bg-center">
-          {project.src && <img className="h-[100%] m-auto" src={`${project.src}/${project.id}_1.jpg`} />}
+        <div className="h-[300px] border-[#ced4da] border-b bg-contain bg-center">
+          {project.src && <img className="h-[100%] m-auto" src={`${project.src}/logo.png`} />}
         </div>
         <div className="border-b border-[#ced4da] p-[10px] p-[20px_60px]">
           <div className="font-semibold text-[28px] mb-[20px]">{project.name}</div>
@@ -72,9 +80,15 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
             <div className="flex">
               <div className="w-[80px] flex">
                 <img className="w-[16px] h-[16px] m-[auto_0] mr-[5px]" src="/icons/code.svg" alt="double arrow 아이콘" />
-                스택
+                <span className="m-[auto_0]">스택</span>
               </div>
-              <div>Vue.js</div>
+              <div className="flex flex-wrap flex-1 gap-[5px]">
+                {project.stack.map((stack, idx) => {
+                  return <Badge key={idx} type={stack.type}>
+                    {stack.name}
+                  </Badge>
+                })}
+              </div>
             </div>
           </div>
         </div>
