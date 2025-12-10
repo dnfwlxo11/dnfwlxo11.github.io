@@ -8,14 +8,16 @@ const projects = [
     imgLen: 5,
     desc: "띠부씰 수집가를 위한 사이트",
     descDetail: [
-      "띠부로그는 다양한 분야의 간단히 말하자면 씰수집가를 위한 기록 저장소입니다. \n\n다 똑같아 보이는 씰들도 자세히 알아보면 시리즈가 있습니다.\n그리고 씰마다의 발매시기, 수록 리스트가 다르기 때문에 기존의 수기, 액셀 등의 방법으로는 관리가 어렵습니다.\n\n그래서 씰수집가들을 위한띠부로그라는 수집 기록, 거래를 위한 플랫폼을 만들게 되었습니다.",
-      "그래서 띠부로그를 사용한다면 본인이 가지고 있는게 무엇인지, 필요한게 무엇인지, 모으고싶은 씰이 언제 나왔는지, 수록 리스트가 무엇인지 등을 파악할 수 있습니다."
+      "띠부로그는 다양한 분야의 간단히 말하자면 씰수집가를 위한 기록 저장소입니다. \n\n다 똑같아 보이는 씰들도 자세히 알아보면 시리즈가 있습니다.\n그리고 씰마다의 발매시기, 수록 리스트가 다르기 때문에 기존의 수기, 액셀 등의 방법으로는 관리가 어렵습니다.\n\n그래서 씰수집가들을 위한 띠부로그라는 수집 기록, 거래를 위한 플랫폼을 만들게 되었습니다.",
+      "띠부로그를 사용한다면 기존의 힘든점들을 해결할 수 있습니다. 본인이 가지고 있는게 무엇인지, 필요한게 무엇인지, 모으고싶은 씰이 언제 나왔는지, 수록 리스트가 무엇인지 등을 파악하며 수집 생활의 편리한 도구가 될 것 입니다."
     ],
     descImg: [
       "/project/ddibuLog/ddibuLog_1.jpg",
       "/project/ddibuLog/ddibuLog_2.jpg",
     ],
     stack: [{ name: "Nuxt3", type: "front" }],
+    github: "https://github.com/dnfwlxo11/ddibu_log",
+    link: "https://ddibu-log.daein.dev/",
   },
   {
     id: "i18n-manage-tool",
@@ -25,12 +27,19 @@ const projects = [
     src: "/project/i18n-manage-tool",
     imgLen: 2,
     desc: "구글 시트 기반의 다국어 관리 툴",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "국제화 관리툴은 구글시트와 연동을 통해 다국어 자료 관리를 도와줍니다.\n\n프로젝트 진행 당시 5개국어를 번역하고 여러개의 프로젝트에 적용하는 업무를 수행해 왔습니다.\n하지만 매번 번역 요청 파일을 관리팀에 넘기고 관리팀이 번역 완료파일을 주면 그것을 적용하는 과정이 몹시 번거로웠습니다.\n양식없이 txt 파일로 덜렁 보내기도하고 어느땐 액셀에 적어서 통보하기도하고 불편한 점이 많아 만들게 되었습니다.",
+      "구글시트와 연동을 통해 공통된 양식으로 관리를 하도록 했습니다.\n\n개발에 지식이 없는 사람에게 \"링크에 남겨진 부분만 채워주세요\"하고 개발자는 불러오기와 적용하기만 누르면 설정한 프로젝트 경로에 번역파일을 알맞게 넣어줍니다.\n단순하지만 당시 번역 업무의 체계도 없었고 컨텐츠의 내용이 주단위로 바뀌었을때 큰 도움이 되었던 툴이었습니다.\n\n\n추후 관리팀으로 번역 업무와 툴 유지보수가 넘어가게되어 중단하게 되었습니다."
+    ],
+    descImg: [
+      "/project/i18n-manage-tool/i18n-manage-tool_1.jpg",
+      "/project/i18n-manage-tool/i18n-manage-tool_2.jpg",
+    ],
     stack: [
       { name: "Electron", type: "back" },
       { name: "Vue3", type: "front" },
     ],
+    github: "https://github.com/dnfwlxo11/i18n-manage-tool",
   },
   {
     id: "aurora",
@@ -40,9 +49,18 @@ const projects = [
     src: "/project/aurora",
     imgLen: 3,
     desc: "nuxt 기반의 프로젝트 분석 툴",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "오로라는 Nuxt 기반의 프로젝트를 손쉽게 살펴보고 스토리북과 같은 기능을 제공하는 툴입니다.",
+      "프로젝트에 사용되어 지는 컴포넌트를 분석하여 미리보기를 제공하고 시나리오를 제공합니다.\n\n메뉴를 통해 props 값을 바꾸며 해당 컴포넌트의 적용되는 방식, 모습을 확인할 수 있으며 개발지식이 없는 사람들은 복잡한 코드를 볼필요없이 클릭, 입력을 통해 미리 볼 수 있습니다.",
+      "컴포넌트 내에 연관된 컴포넌트가 있으면 어떤것이 연결되어 있는지 파악이 가능합니다. \n이를 통해 개발자는 해당 페이지에 어떤 컴포넌트들이 엮여있는지, 디자이너는 어떤 컴포넌트가 문제있는지 확실한 표현을 하는 등 의사소통에 이점을 줄 수 있습니다.\n\n\n(개발 중 다른 프로젝트를 연달아 진행하며 무기한 연기되었습니다.)",
+    ],
+    descImg: [
+      "/project/aurora/aurora_1.jpg",
+      "/project/aurora/aurora_2.jpg",
+      "/project/aurora/aurora_3.jpg",
+    ],
     stack: [{ name: "Nuxt3", type: "front" }],
+    github: "",
   },
   {
     id: "pickMem",
@@ -52,9 +70,21 @@ const projects = [
     src: "/project/pickMem",
     imgLen: 5,
     desc: "오프라인의 간편 사진 찍기를 온라인화 시킨 서비스",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "흔한 네컷사진 서비스를 웹으로 구현한 것입니다. \n\n요즘엔 AI까지 가미한 네컷 서비스가 많아졌지만 당시엔 특정 브랜드가 독점하고 특색없는 서비스를 제공하며 사용자는 사용할 수 밖에 없었습니다.\n그래서 매번 5천원, 만원 쓰는게 아까워 직접 만들게 되었습니다.",
+      "",
+      "",
+      "물론 인화까지 이어지지는 않기때문에 다르긴하지만 재미삼아 찍어 공유하며 추억을 남기는 목적은 달성할 수 있었습니다.\n\n글자넣기, 스티커 꾸미기, 필터 효과등을 구현하여 유사한 결과물을 낼 수 있습니다.",
+    ],
+    descImg: [
+      "/project/pickMem/pickMem_2.jpg",
+      "/project/pickMem/pickMem_3.jpg",
+      "/project/pickMem/pickMem_4.jpg",
+      "/project/pickMem/pickMem_5.jpg",
+    ],
     stack: [{ name: "Vue2", type: "front" }],
+    link: "https://dnfwlxo11.github.io/pickMem",
+    github: "https://github.com/dnfwlxo11/pickMem",
   },
   {
     id: "lyricsPlayer",
@@ -64,12 +94,23 @@ const projects = [
     src: "/project/lyricsPlayer",
     imgLen: 4,
     desc: "단순 음악 사이트에 가사의 감정분석을 합친 스트리밍 서비스",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "LyricsPlayer는 가사분석을 통해 유사한 노래를 추천해주는 서비스입니다.",
+      "본인이 좋아하는 부분의 가사 혹은 문장을 적으면 해당 검색어의 감정을 읽어 노래를 추천해주게 됩니다. \n\n사진속에 \"좋아했던 사람이 가장 먼 사람이 됐어\"라는 가사를 검색하자 괴롭다고 판단을 했고 그것과 유사한 노래와 정 반대의 느낌인 노래를 추천해주는 모습을 볼 수 있습니다.",
+      "",
+      "그 밖에 음악 재생 부분은 흔한 음악 서비스처럼 즐겨찾기, 플레이리스트 기능, 댓글 등등의 기능을 지원합니다."
+    ],
+    descImg: [
+      "/project/lyricsPlayer/lyricsPlayer_1.jpg",
+      "/project/lyricsPlayer/lyricsPlayer_2.jpg",
+      "/project/lyricsPlayer/lyricsPlayer_3.jpg",
+      "/project/lyricsPlayer/lyricsPlayer_4.jpg",
+    ],
     stack: [
       { name: "Vue2", type: "front" },
       { name: "Node.js", type: "back" },
     ],
+    github: "https://github.com/dnfwlxo11/lyricsPlayer",
   },
   {
     id: "itub",
@@ -85,6 +126,7 @@ const projects = [
       { name: "Raspberry.pi", type: "back" },
       { name: "Node.js", type: "back" },
     ],
+    github: "https://github.com/Ultimate-ItubProject/Itub_Web",
   },
   {
     id: "cafi",
@@ -100,6 +142,7 @@ const projects = [
       { name: "Raspberry.pi", type: "back" },
       { name: "Node.js", type: "back" },
     ],
+    github: "https://github.com/dnfwlxo11/CategorizingFish_ChosunUniv_fallsemesterProject",
   },
   {
     id: "match",
@@ -115,6 +158,7 @@ const projects = [
       { name: "Android native", type: "back" },
       { name: "Node.js", type: "back" },
     ],
+    github: "https://github.com/dnfwlxo11/military-sports-matchmaker",
   },
 ]
 

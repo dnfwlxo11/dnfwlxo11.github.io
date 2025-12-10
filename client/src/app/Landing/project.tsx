@@ -17,7 +17,11 @@ export default function project() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-3 gap-[20px]">
         {projects.map((project, idx) => {
-          return <div key={idx} className="flex flex-col bg-white rounded-[6px] cursor-pointer shadow-md bg-center hover:scale-102 transition-all duration-200">
+          return <div 
+            key={idx} 
+            className="flex flex-col bg-white rounded-[6px] cursor-pointer shadow-md bg-center hover:scale-102 transition-all duration-200"
+            onClick={() => openModal(SideBar, { project })}
+          >
             <div 
               className='aspect-[4/3] box-border p-[10px] relative rounded-[6px_6px_0_0] bg-center border-b border-[#F3F5F7]'
               style={{
@@ -26,7 +30,6 @@ export default function project() {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
               }}
-              onClick={() => openModal(SideBar, { project })}
             ></div>
             <div className="m-[10px_20px_14px_14px] flex flex-col">
               <div className="stroke-black text-[16px] mb-[10px] font-medium">{project.name}</div>
