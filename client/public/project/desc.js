@@ -120,8 +120,20 @@ const projects = [
     src: "/project/itub",
     imgLen: 6,
     desc: "IOT 기반의 자동화 샤워 서비스",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "",
+      "",
+      "",
+      "I-tub는 교내 공모전에서 내기위해 만들기 시작했으며 웹, 앱과 연동하여 샤워를 할때 모든걸 자동화하고 사용자 맞춤 서비스를 제공하고자 만든 것입니다.\n\n태블릿으로 사용자 마다의 나이, 성별 등의 개인정보를 입력하고 약 500여명의 설문조사의 데이터로 학습된 AI 모델로 적합한 환경을 추천해주며 혹은 미리 준비된 프리셋을 이용하여 편리하고 간편하게 사용할 수 있습니다.",
+      "서보모터, 스위치 모듈, 습도 센서, 워터 펌프 등의 부품을 적절히 사용하여 데모를 만들었습니다."
+    ],
+    descImg: [
+      "/project/itub/itub_1.jpg",
+      "/project/itub/itub_2.jpg",
+      "/project/itub/itub_3.jpg",
+      "/project/itub/itub_4.jpg",
+      "/project/itub/itub_5.jpg",
+    ],
     stack: [
       { name: "Raspberry.pi", type: "back" },
       { name: "Node.js", type: "back" },
@@ -136,8 +148,18 @@ const projects = [
     src: "/project/cafi",
     imgLen: 5,
     desc: "IOT 기반의 병어 분류 서비스",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "카피는 교내 공모전을 위해 만들기 시작했으며 동네 횟집에서 사장님의 거래처에서 양식하던 물고기가 병에걸려 한 수조만큼을 폐사했다는 말을 듣고 만들기 시작했습니다.",
+      "학생 신분으로는 자료를 찾기 힘들었기에 몇몇개의 물고기마다 병에 걸린 사진을 찾고 이를 합성과 복제를 통해 수를 늘려 병어 분류 AI 모델을 만들었습니다.",
+      "물고기가 어떠한 관을 통해 지나간다는 가정하에 모습을 스트리밍하는 카메라가 있고 이를 지나가며 병에 걸린 여부를 판단하여 격리하는 데모를 만들었습니다.",
+      "사용자는 이를 실시간으로 웹, 앱에서 관찰할 수 있게 만들어져 있습니다."
+    ],
+    descImg: [
+      "/project/cafi/cafi_1.jpg",
+      "/project/cafi/cafi_2.jpg",
+      "/project/cafi/cafi_3.jpg",
+      "/project/cafi/cafi_4.jpg",
+    ],
     stack: [
       { name: "Raspberry.pi", type: "back" },
       { name: "Node.js", type: "back" },
@@ -152,8 +174,18 @@ const projects = [
     src: "/project/match",
     imgLen: 5,
     desc: "체육활동 대전상태 매칭 앱",
-    descDetail: [""],
-    descImg: [""],
+    descDetail: [
+      "매치메이커는 군인일때 오픈소스 공모전 참가를 하게되어 만든 어플리케이션입니다.\n\n군부대마다 다르겠지만 제가 있던 군부대는 건물이 여러개로 나뉘고 소속도 달라 제한된 환경에서 서로 사용하려하며 갈등이 잦았습니다.\n\n이를 해결하기 위한 체육활동 장소 예약 및 대전 앱입니다.",
+      "당시 축구와 농구, 배구를 할 수 있는 공간이 있어 세 가지 종목을 채택 후 개발을 진행했습니다.",
+      "",
+      "방을 생성하고 기다리면 알맞은 대전 상대가 골라지도록 매칭이 되며 없을 경우 해당 인원끼리 사용하면 되는 시스템입니다.",
+    ],
+    descImg: [
+      "/project/match/match_1.jpg",
+      "/project/match/match_2.jpg",
+      "/project/match/match_3.jpg",
+      "/project/match/match_4.jpg",
+    ],
     stack: [
       { name: "Android native", type: "back" },
       { name: "Node.js", type: "back" },
