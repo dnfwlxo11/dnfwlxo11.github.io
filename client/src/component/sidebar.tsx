@@ -47,9 +47,9 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
       onTransitionEnd={handleTransitionEnd}
       className={`
         flex flex-col
-        h-[85%] w-[100%] min-w-[320px] bottom-0
+        h-[calc(100%-80px)] w-[100%] min-w-[320px] bottom-0
         sm:h-dvh sm:w-[60%] sm:top-0 right-0 fixed z-11 bg-white
-        border-s-1 border-[#ced4da]
+        border-t-1 sm:border-s-1 sm:border-t-0 border-[#ced4da]
         transform transition-transform duration-500
         ${visible  ? "translate-y-0 sm:translate-x-0" : "translate-y-full sm:translate-y-0 sm:translate-x-full"}
       `}
@@ -117,9 +117,9 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
         </div>
         <div style={{ scrollbarWidth: 'none' }} className="lg:p-[40px_60px] p-[20px_20px] overflow-auto scroll flex-1">
           {project.descImg.map((img, idx) => {
-            return <div key={idx} className="flex flex-col gap-[20px]">
+            return <div key={idx} className="flex flex-col gap-[10px] sm:gap-[20px] text-[12px] sm:text-[16px]">
               <img className="h-[100%] object-contain" src={img} alt={`${project.name}의 ${idx + 1}번째 사진`} />
-              <div className="font-medium leading-[28px] whitespace-pre-wrap">{project.descDetail[idx]}</div>
+              <div className="font-medium leading-[18px] sm:leading-[28px] whitespace-pre-wrap">{project.descDetail[idx]}</div>
               <div className="sm:h-[40px] h-[10px]"></div>
             </div>
           })}
