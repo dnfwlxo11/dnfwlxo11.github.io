@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #262626;
+}
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    rgba(150, 200, 255, 0.8) 0%,
+    rgba(200, 225, 255, 0.4) 35%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  transform-origin: center;
+  animation: move 2s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;  
+}
