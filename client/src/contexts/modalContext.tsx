@@ -3,7 +3,7 @@
 import Modals from "@/component/Modals";
 import { ComponentType, createContext, HTMLAttributes, PropsWithChildren, useMemo, useState } from "react";
 export type ModalComponent = ComponentType<any>
-export type ModalProps = Record<string, undefined> | HTMLAttributes<HTMLDivElement>
+export type ModalProps = Record<string, any> | HTMLAttributes<HTMLDivElement>
 export type ModalsState = Array<{ Component: ModalComponent; props?: ModalProps; isOpen: boolean }>;
 
 export const ModalsStateContext = createContext<ModalsState>([])
@@ -22,7 +22,6 @@ const disableScroll = () => {
   document.body.style.cssText = `
   position: fixed; 
   top: -${window.scrollY}px;
-  overflow-y: scroll;
   width: 100%;`;
 };
 
