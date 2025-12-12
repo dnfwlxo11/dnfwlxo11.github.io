@@ -1,0 +1,21 @@
+/* [project]/src/app/pretendard_1fb668b2.module.css [app-client] (css) */
+@font-face {
+  font-family: pretendard;
+  src: url("../media/pretendardvariable-s.p.7cd63f70.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: pretendard Fallback;
+  src: local(Arial);
+  ascent-override: 93.76%;
+  descent-override: 23.75%;
+  line-gap-override: 0.0%;
+  size-adjust: 101.55%;
+}
+
+.pretendard_1fb668b2-module__n5CH-a__className {
+  font-family: pretendard, pretendard Fallback;
+}
+
+/*# sourceMappingURL=src_app_pretendard_1fb668b2_module_css_e59ae46c._.single.css.map*/
