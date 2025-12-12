@@ -2,9 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true
+    unoptimized: !!process.env.UNOPTIMIZED
   },
-  outputs: 'docs',
+  assetPrefix: process.env.ASSETPREFIX,
+  output: process.env.NODE_ENV === 'development' ? undefined : "export",
+  distDir: process.env.DISTDIR
 };
 
 export default nextConfig;

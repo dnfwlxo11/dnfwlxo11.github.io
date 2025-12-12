@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function foreword() {
   return (
     <div className="w-[100%]">
@@ -18,7 +20,7 @@ export default function foreword() {
         <a href="https://github.com/dnfwlxo11" target="_blank">
           Github
         </a>
-        <img className="ml-[5px] w-[24px] h-[24px]" src="/icons/github.svg" alt="github 아이콘" />
+        <Image className="ml-[5px]" src="/icons/github.svg" width={24} height={24} alt="github 아이콘" />
       </div>
     </div>
   );

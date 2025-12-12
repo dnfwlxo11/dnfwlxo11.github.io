@@ -38,6 +38,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+.env
+.env.*
 
 # next files
 .next/**
