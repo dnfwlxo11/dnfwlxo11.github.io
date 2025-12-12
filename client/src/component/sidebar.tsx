@@ -1,4 +1,4 @@
-import { ModalsDispatchContext } from "@/contexts/modalContext"
+import { ModalsDispatchContext, ModalsStateContext } from "@/contexts/modalContext"
 import useModal from "@/hooks/useModal"
 import { useContext, useEffect, useState } from "react"
 import Badge from "./badge"
@@ -25,11 +25,9 @@ type ProjectDesc = {
   link: string | null,
 }
 
-export default function SideBar({ project }: { project: ProjectDesc }) {
-  const { isOpen: IsOpen } = useModal()
+export default function SideBar({ project, isOpen }: { project: ProjectDesc, isOpen: boolean }) {
+  const modals = useContext(ModalsStateContext)
   const { close } = useContext(ModalsDispatchContext)
-
-  const isOpen = IsOpen('SideBar')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -37,8 +35,7 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
       const timer = setTimeout(() => setVisible(true), 10);
       return () => clearTimeout(timer);
     } else {
-      const timer = setTimeout(() => setVisible(false), 500); 
-      return () => clearTimeout(timer);
+      setVisible(false)
     }
   }, [isOpen])
   
@@ -46,17 +43,22 @@ export default function SideBar({ project }: { project: ProjectDesc }) {
     if (!visible) close(SideBar)
   }
 
+  const translateActive = visible 
+    ? "sm:translate-x-0 translate-y-0" 
+    : "sm:translate-y-0 sm:translate-x-full translate-y-full"
+
   return <>
     {isOpen && <div className="fixed h-[100%] w-[100%] left-0 top-0 z-10" onClick={() => setVisible(false)}></div>}
     <div
       onTransitionEnd={handleTransitionEnd}
       className={`
-        flex flex-col
+        flex flex-col z-11
+        fixed sm:top-0 right-0
         h-[calc(100%-80px)] w-[100%] min-w-[320px] bottom-0
-        sm:h-dvh sm:w-[60%] sm:top-0 right-0 fixed z-11 bg-white
+        sm:h-dvh sm:w-[60%] bg-white
         border-t-1 sm:border-s-1 sm:border-t-0 border-[#ced4da]
         transition-all duration-500
-        ${visible ? "sm:translate-x-0 translate-y-0" : "sm:translate-y-0 sm:translate-x-full translate-y-full"}
+        ${translateActive}
       `}
     >
       <div className="sm:h-[40px] h-[32px] p-[0_10px] border-b border-[#ced4da] flex">

@@ -15,15 +15,7 @@ export default function useModal() {
     close(Component)
   }
 
-  const isOpen = (name: string) => {
-    const isExist = modals.find((modal) => modal.Component.name === name)
-
-    if (isExist !== undefined) return isExist.isOpen
-    return false
-  }
-
   return {
-    isOpen,
     openModal,
     closeModal
   }

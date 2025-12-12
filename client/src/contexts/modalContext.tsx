@@ -57,12 +57,12 @@ const ModalsProvider = ({ children }: PropsWithChildren) => {
   const dispatch = useMemo(() => ({ open, close }), [])
 
   return (
-    <ModalsStateContext.Provider value={openedModals}>
-      <ModalsDispatchContext.Provider value={dispatch}>
+    <ModalsStateContext value={openedModals}>
+      <ModalsDispatchContext value={dispatch}>
         {children}
         <Modals/>
-      </ModalsDispatchContext.Provider>
-    </ModalsStateContext.Provider>
+      </ModalsDispatchContext>
+    </ModalsStateContext>
   )
 }
 

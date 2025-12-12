@@ -1,7 +1,8 @@
-module.exports = {
+const config = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [],
   safelist: [
     'transition-all',
     'duration-500',
@@ -11,5 +12,6 @@ module.exports = {
     'translate-y-full',
     'sm:right-0',
     'sm:right-full',
-  ]
+  ],
 }
+export default config
