@@ -74,7 +74,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./client
       - name: Add noJekyll file
-        run: ${{ steps.detect-package-manager.outputs.runner }} run touch
+        run: touch ./docs/.nojekyll
         working-directory: ./client
       - name: Check jekyll file
         run: ls ./docs
