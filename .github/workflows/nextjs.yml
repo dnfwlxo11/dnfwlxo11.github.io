@@ -63,14 +63,18 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ./client
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: ./client
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: ./client
       - name: Add noJekyll file
         run: ${{ steps.detect-package-manager.outputs.runner }} run touch
+        working-directory: ./client
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
