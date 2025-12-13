@@ -64,19 +64,12 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ./client
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        working-directory: ./client
       - name: Verify Build Output
         run: ls -R ./dist || echo "dist folder not found!"
       - name: Check current path
         run: echo $PWD
       - name: Debug run
         run: ls
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with: 
-          path: "./docs"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./client
