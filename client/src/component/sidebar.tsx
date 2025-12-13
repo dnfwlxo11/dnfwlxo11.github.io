@@ -63,34 +63,34 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
     >
       <div className="sm:h-[40px] h-[32px] p-[0_10px] border-b border-[#ced4da] flex">
         <div className="m-[auto_0]" onClick={() => setVisible(false)}>
-          <Image className="cursor-pointer" width={20} height={20} src="/icons/close.svg" alt="double arrow 아이콘" />
+          <Image className="cursor-pointer" width={20} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/close.svg`} alt="double arrow 아이콘" />
         </div>
       </div>
       <div className="p-[0_40px] flex-1 flex flex-col overflow-hidden">
         <div className="flex min-h-[300px] border-[#ced4da] border-b">
           <div className="w-1/3 m-auto">
-            {project.src && <Image className="align-middle" width={200} height={200} objectFit="contain" style={{ width: '100%' }} unoptimized={true} src={`${project.src}/logo.png`} alt="프로젝트 메인 사진" />}
+            {project.src && <Image className="align-middle" width={200} height={200} objectFit="contain" style={{ width: '100%' }} unoptimized={true} src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.src}/logo.png`} alt="프로젝트 메인 사진" />}
           </div>
           <div className="w-2/3 xl:p-[20px_60px] lg:p-[20px_40px] p-[10px_40px] m-auto">
             <div className="font-semibold sm:text-[28px] text-[18px] sm:mb-[20px] mb-[12px]">{project.name}</div>
             <div className="flex flex-col gap-[10px] sm:text-[18px] text-[12px]">
               <div className="lg:flex block">
                 <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src="/icons/description.svg" alt="description 아이콘" />
+                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/description.svg`} alt="description 아이콘" />
                   <span className="m-[auto_0]">소개</span>
                 </div>
                 <div>{project.desc}</div>
               </div>
               <div className="lg:flex block">
                 <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src="/icons/calendar_month.svg" alt="calendar_month 아이콘" />
+                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/calendar_month.svg`} alt="calendar_month 아이콘" />
                   <span className="m-[auto_0]">기간</span>
                 </div>
                 <div>{project.period_start} ~ {project.period_end}</div>
               </div>
               <div className="lg:flex block">
                 <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src="/icons/code.svg" alt="code 아이콘" />
+                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/code.svg`}alt="code 아이콘" />
                   <span className="m-[auto_0]">스택</span>
                 </div>
                 <div className="flex flex-wrap flex-1 gap-[5px]">
@@ -103,7 +103,7 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
               </div>
               {project.github && <div className="lg:flex block">
                 <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={20} src="/icons/github.svg" alt="github 아이콘" />
+                  <Image className="m-[auto_0] mr-[5px]" width={16} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/github.svg`} alt="github 아이콘" />
                   <span className="m-[auto_0]">코드</span>
                 </div>
                 <a href={project.github} className="text-[#2196F3] block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
@@ -112,7 +112,7 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
               </div>}
               {project.link && <div className="lg:flex block">
                 <div className="min-w-[80px] flex whitespace-nowrap">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src="/icons/link.svg" alt="link 아이콘" />
+                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/link.svg`} alt="link 아이콘" />
                   <span className="m-[auto_0]">링크</span>
                 </div>
                 <a href={project.link} className="text-[#2196F3] block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
@@ -125,7 +125,7 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
         <div style={{ scrollbarWidth: 'none' }} className="lg:p-[40px_60px] p-[20px_20px] overflow-auto scroll flex-1">
           {project.descImg.map((img, idx) => {
             return <div key={idx} className="flex flex-col gap-[10px] sm:gap-[20px] text-[12px] sm:text-[16px]">
-              <Image width={200} height={200} unoptimized={true} objectFit="contain" style={{ width: '100%' }} src={img} alt={`${project.name}의 ${idx + 1}번째 사진`} />
+              <Image width={200} height={200} unoptimized={true} objectFit="contain" style={{ width: '100%' }} src={`${process.env.NEXT_PUBLIC_BASE_PATH}${img}`} alt={`${project.name}의 ${idx + 1}번째 사진`} />
               <div className="font-medium leading-[18px] sm:leading-[28px] whitespace-pre-wrap">{project.descDetail[idx]}</div>
               <div className="sm:h-[40px] h-[10px]"></div>
             </div>

@@ -20,7 +20,7 @@ export default function foreword() {
         <a href="https://github.com/dnfwlxo11" target="_blank">
           Github
         </a>
-        <Image className="ml-[5px]" src="/icons/github.svg" width={24} height={24} alt="github 아이콘" />
+        <Image className="ml-[5px]" src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/github.svg`} width={24} height={24} alt="github 아이콘" />
       </div>
     </div>
   );

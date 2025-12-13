@@ -25,7 +25,7 @@ export default function project() {
             <div 
               className='aspect-[4/3] box-border p-[10px] relative rounded-[6px_6px_0_0] bg-center border-b border-[#F3F5F7]'
               style={{
-                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url(/project/${project.id}/logo.png)`,
+                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url(${process.env.NEXT_PUBLIC_BASE_PATH}/project/${project.id}/logo.png)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
