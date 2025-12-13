@@ -73,12 +73,10 @@ jobs:
         run: echo $PWD
       - name: Debug run
         run: ls
-      - name: Debug run2
-        run: cd client & ls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with: 
-          path: "./out"
+          path: "./dist"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./client
