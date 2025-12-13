@@ -9,9 +9,9 @@
     "test": "cross-env NODE_ENV=test next build",
     "start": "next start",
     "lint": "next lint",
-    "preexport": "rimraf out",
-    "touch": "touch out/.nojekyll",
-    "posttouch": "touch out/_next/.nojekyll"
+    "preexport": "rimraf docs",
+    "touch": "touch docs/.nojekyll",
+    "posttouch": "touch docs/_next/.nojekyll"
   },
   "dependencies": {
     "next": "15.4.6",
