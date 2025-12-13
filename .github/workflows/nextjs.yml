@@ -36,7 +36,7 @@ jobs:
         run: |
           echo "manager=npm" >> $GITHUB_OUTPUT
           echo "command=install" >> $GITHUB_OUTPUT
-          echo "runner=npm install" >> $GITHUB_OUTPUT
+          echo "runner=npm ci" >> $GITHUB_OUTPUT
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
