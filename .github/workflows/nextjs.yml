@@ -70,7 +70,7 @@ jobs:
       - name: Verify Build Output
         run: ls -R ./dist || echo "dist folder not found!"
       - name: Check current path
-        run: echo $pwd
+        run: echo $PWD
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with: 
