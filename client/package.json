@@ -2,12 +2,16 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dnfwlxo11.github.io/",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "test": "cross-env NODE_ENV=test next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preexport": "rimraf out",
+    "touch": "touch out/.nojekyll",
+    "posttouch": "touch out/_next/.nojekyll"
   },
   "dependencies": {
     "next": "15.4.6",
