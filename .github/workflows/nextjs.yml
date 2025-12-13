@@ -69,6 +69,8 @@ jobs:
         working-directory: ./client
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with: 
+          path: "./client/out"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./client
@@ -78,7 +80,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./client/out
 
   # Deployment job
   deploy:
