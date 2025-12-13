@@ -76,7 +76,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} run touch
         working-directory: ./client
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
