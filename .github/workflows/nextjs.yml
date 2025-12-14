@@ -48,7 +48,10 @@ jobs:
         working-directory: ./client
       - name: Build with Next.js
         run: |
-          BASEPATH="" ASSETPREFIX="" NEXT_PUBLIC_BASE_PATH="" next build
+          export BASEPATH=""
+          export ASSETPREFIX=""
+          export NEXT_PUBLIC_BASE_PATH=""
+          npm run build
         working-directory: ./client
       - name: Check current path
         run: echo $PWD
