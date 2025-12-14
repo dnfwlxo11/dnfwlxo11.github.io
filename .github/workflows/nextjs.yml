@@ -46,13 +46,13 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ./client
-      - name: Build with Next.js
-        run: |
-          export BASEPATH=""
-          export ASSETPREFIX=""
-          export NEXT_PUBLIC_BASE_PATH=""
-          npm run build
-        working-directory: ./client
+      # - name: Build with Next.js
+      #   run: |
+      #     export BASEPATH=""
+      #     export ASSETPREFIX=""
+      #     export NEXT_PUBLIC_BASE_PATH=""
+      #     npm run build
+      #   working-directory: ./client
       - name: Check current path
         run: echo $PWD
       - name: Check current path files
