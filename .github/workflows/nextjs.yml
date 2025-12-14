@@ -52,6 +52,8 @@ jobs:
         working-directory: ./client
       - name: Check current path
         run: echo $PWD
+      - name: Check current path files
+        run: ls -a ./
       - name: Add noJekyll file
         run: touch ./docs/.nojekyll
       - name: Check jekyll file
