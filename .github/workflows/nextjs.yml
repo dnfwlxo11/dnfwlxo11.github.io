@@ -72,7 +72,7 @@ jobs:
       - name: Check current path
         run: echo $PWD
       - name: Add noJekyll file
-        run: touch ./docs/.nojekyll && echo 'https://dnfwlxo11.github.io/' > dist/CNAME
+        run: touch ./docs/.nojekyll && echo 'https://dnfwlxo11.github.io/' > ./dist/CNAME
       - name: Check jekyll file
         run: ls ./docs
       - name: Upload artifact
