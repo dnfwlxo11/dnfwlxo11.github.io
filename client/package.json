@@ -9,7 +9,7 @@
     "test": "cross-env NODE_ENV=test next build",
     "start": "next start",
     "lint": "next lint",
-    "touch": "touch docs/.nojekyll && echo 'https://dnfwlxo11.github.io/' > dist/CNAME"
+    "touch": "touch docs/.nojekyll"
   },
   "dependencies": {
     "next": "15.4.6",
