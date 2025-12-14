@@ -9,9 +9,7 @@
     "test": "cross-env NODE_ENV=test next build",
     "start": "next start",
     "lint": "next lint",
-    "preexport": "rimraf docs",
-    "touch": "touch docs/.nojekyll",
-    "posttouch": "touch docs/_next/.nojekyll"
+    "touch": "touch docs/.nojekyll && echo 'https://dnfwlxo11.github.io/' > dist/CNAME"
   },
   "dependencies": {
     "next": "15.4.6",
