@@ -66,16 +66,17 @@ jobs:
         working-directory: ./client
       - name: Verify Build Output
         run: ls -R ./dist || echo "dist folder not found!"
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: ./client
       - name: Check current path
         run: echo $PWD
       - name: Debug run
         run: ls
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        working-directory: ./client
       - name: Add noJekyll file
-        run: ${{ steps.detect-package-manager.outputs.runner }} run touch
-        working-directory: ./client
+        run: touch ./docs/.nojekyll
+      - name: Check jekyll file
+        run: ls ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
