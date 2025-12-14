@@ -50,7 +50,6 @@ jobs:
         run: |
           BASEPATH="" ASSETPREFIX="" NEXT_PUBLIC_BASE_PATH="" ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./client
-        working-directory: ./client
       - name: Check current path
         run: echo $PWD
       - name: Add noJekyll file
