@@ -64,9 +64,9 @@ jobs:
       - name: Check Base Paths in HTML
         run: |
           echo "--- index.html content ---"
-          cat ./docs/index.html | grep '<script' | head -n 5 
+          cat ./index.html | grep '<script' | head -n 5 
           echo "--- 404.html content ---"
-          cat ./docs/404.html | grep '<script' | head -n 5
+          cat ./404.html | grep '<script' | head -n 5
         working-directory: ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
