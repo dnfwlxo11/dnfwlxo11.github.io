@@ -5,6 +5,7 @@ const projects = [
     period_start: "2026-06-29",
     period_end: "운영중",
     src: "/project/poke_log",
+    logoBg: "#222222",
     imgLen: 2,
     desc: "포켓몬 카드 컬렉터를 위한 카드 검색·컬렉션 관리 서비스",
     descDetail: [
@@ -21,7 +22,7 @@ const projects = [
       { name: "Cloudflare Workers", type: "back" },
       { name: "D1", type: "db" },
     ],
-    github: "https://github.com/dnfwlxo11/poke_log",
+    github: "",
     link: "https://poke-log.daein.dev",
   },
   {
@@ -46,7 +47,7 @@ const projects = [
       { name: "Supabase", type: "db" },
       { name: "Cloudflare Workers", type: "back" },
     ],
-    github: "https://github.com/dnfwlxo11/ddibu_log",
+    github: "",
     link: "https://ddibu-log.daein.dev",
   },
   {

@@ -16,6 +16,7 @@ type ProjectDesc = {
   period_start: string,
   period_end: string,
   src: string | null,
+  logoBg?: string,
   imgLen: number,
   desc: string,
   descDetail: string[],
@@ -76,7 +77,7 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
       </div>
       <div className="p-[0_40px] flex-1 flex flex-col overflow-hidden">
         <div className="flex min-h-[300px] border-border border-b">
-          <div className="w-1/3 m-auto bg-white rounded-md p-3">
+          <div className="w-1/3 m-auto rounded-md p-3" style={{ backgroundColor: project.logoBg || '#ffffff' }}>
             {project.src && <Image className="align-middle" width={200} height={200} objectFit="contain" style={{ width: '100%' }} unoptimized={true} src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.src}/logo.png`} alt="프로젝트 메인 사진" />}
           </div>
           <div className="w-2/3 xl:p-[20px_60px] lg:p-[20px_40px] p-[10px_40px] m-auto">
