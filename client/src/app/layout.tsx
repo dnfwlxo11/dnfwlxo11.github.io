@@ -19,8 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={pretendard.className}>
-        <div className="bg"></div>
+      <body className={`${pretendard.className} bg-background text-foreground`}>
         <ModalsProvider>
           {children}
         </ModalsProvider>

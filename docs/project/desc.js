@@ -1,9 +1,34 @@
 const projects = [
   {
+    id: "poke_log",
+    name: "포케로그",
+    period_start: "2026-06-29",
+    period_end: "운영중",
+    src: "/project/poke_log",
+    imgLen: 2,
+    desc: "포켓몬 카드 컬렉터를 위한 카드 검색·컬렉션 관리 서비스",
+    descDetail: [
+      "포케로그는 포켓몬 카드 컬렉터를 위한 카드 검색과 컬렉션 관리 서비스입니다. \n\n카드 종류가 워낙 많고 시리즈, 발매 시기, 레어도가 제각각이라 본인이 가진 카드와 필요한 카드를 정리하기가 쉽지 않습니다. 기존엔 수기나 엑셀로 관리하다 보니 검색도 안 되고 다른 컬렉터와 정보를 공유하기도 불편했습니다.\n\n그래서 카드 카탈로그 검색, 컬렉션 관리, 교환 게시판을 중심으로 컬렉터가 실제로 쓸 수 있는 서비스를 만들고 있습니다.",
+      "카드 상태(센터링, 모서리, 엣지, 표면)를 사진 한 장으로 자동 분석해주는 기능도 준비하고 있지만, 지금은 컬렉터에게 필요한 검색과 컬렉션·교환 관리 기능을 먼저 다듬는 데 집중하고 있습니다."
+    ],
+    descImg: [
+      "/project/poke_log/poke_log_1.png",
+      "/project/poke_log/poke_log_2.png",
+    ],
+    stack: [
+      { name: "Next.js", type: "front" },
+      { name: "TypeScript", type: "lang" },
+      { name: "Cloudflare Workers", type: "back" },
+      { name: "D1", type: "db" },
+    ],
+    github: "https://github.com/dnfwlxo11/poke_log",
+    link: "https://poke-log.daein.dev",
+  },
+  {
     id: "ddibuLog",
     name: "띠부로그",
     period_start: "2025-12-01",
-    period_end: "ing",
+    period_end: "운영중",
     src: "/project/ddibuLog",
     imgLen: 5,
     desc: "띠부씰 수집가를 위한 사이트",
@@ -15,7 +40,12 @@ const projects = [
       "/project/ddibuLog/ddibuLog_1.jpg",
       "/project/ddibuLog/ddibuLog_2.jpg",
     ],
-    stack: [{ name: "Nuxt3", type: "front" }],
+    stack: [
+      { name: "Nuxt4", type: "front" },
+      { name: "TypeScript", type: "lang" },
+      { name: "Supabase", type: "db" },
+      { name: "Cloudflare Workers", type: "back" },
+    ],
     github: "https://github.com/dnfwlxo11/ddibu_log",
     link: "https://ddibu-log.daein.dev",
   },
@@ -119,7 +149,7 @@ const projects = [
     period_end: "2020-06-25",
     src: "/project/itub",
     imgLen: 6,
-    desc: "IOT 기반의 자동화 샤워 서비스",
+    desc: "IoT 기반의 자동화 샤워 서비스",
     descDetail: [
       "",
       "",
@@ -147,7 +177,7 @@ const projects = [
     period_end: "2019-12-09",
     src: "/project/cafi",
     imgLen: 5,
-    desc: "IOT 기반의 병어 분류 서비스",
+    desc: "IoT 기반의 병든 물고기 분류 서비스",
     descDetail: [
       "카피는 교내 공모전을 위해 만들기 시작했으며 동네 횟집에서 사장님의 거래처에서 양식하던 물고기가 병에걸려 한 수조만큼을 폐사했다는 말을 듣고 만들기 시작했습니다.",
       "학생 신분으로는 자료를 찾기 힘들었기에 물고기마다 병에 걸린 사진을 찾고 이를 합성과 복제를 통해 수를 늘려 병어 분류 AI 모델을 만들었습니다.",
@@ -173,7 +203,7 @@ const projects = [
     period_end: "2017-10-20",
     src: "/project/match",
     imgLen: 5,
-    desc: "체육활동 대전상태 매칭 앱",
+    desc: "체육활동 대전 상대 매칭 앱",
     descDetail: [
       "매치메이커는 군인일때 오픈소스 공모전 참가를 하게되어 만든 어플리케이션입니다.\n\n군부대마다 다르겠지만 제가 있던 군부대는 건물이 여러개로 나뉘고 소속도 달라 제한된 환경에서 서로 사용하려하며 갈등이 잦았습니다.\n\n이를 해결하기 위한 체육활동 장소 예약 및 대전 앱입니다.",
       "당시 축구와 농구, 배구를 할 수 있는 공간이 있어 세 가지 종목을 채택 후 개발을 진행했습니다.",

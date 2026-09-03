@@ -8,33 +8,33 @@ export default function project() {
   const projects = projectDesc
 
   return (
-    <div className="my-[30px] mb-[60px]">
-      <div className="sm:text-[24px] text-[18px] font-semibold">
+    <div className="my-16 pt-8 border-t border-border">
+      <div className="text-lg sm:text-2xl font-semibold tracking-tight">
         개인 프로젝트
       </div>
-      <div className="my-[5px] mb-[20px] sm:text-[20px] text-[14px]">
-        대학생 시절부터 해왔던 보여주기위함보다 내가 필요하거나 해보고 싶어 진행했던 프로젝트입니다. <br />
+      <div className="mt-2 mb-8 text-sm sm:text-base text-muted">
+        대학생 시절부터 해왔던 보여주기위함보다 내가 필요하거나 해보고 싶어 진행했던 프로젝트입니다.
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-3 gap-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((project, idx) => {
-          return <div 
-            key={idx} 
-            className="flex flex-col bg-white rounded-[6px] cursor-pointer shadow-md bg-center hover:scale-102 transition-all duration-200"
+          return <div
+            key={idx}
+            className="flex flex-col rounded-lg cursor-pointer border border-border bg-surface transition-all duration-200 hover:border-foreground hover:-translate-y-0.5"
             onClick={() => openModal(SideBar, { project })}
           >
-            <div 
-              className='aspect-[4/3] box-border p-[10px] relative rounded-[6px_6px_0_0] bg-center border-b border-[#F3F5F7]'
+            <div
+              className="aspect-[4/3] relative rounded-t-lg bg-center border-b border-border bg-white"
               style={{
-                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url(${process.env.NEXT_PUBLIC_BASE_PATH}/project/${project.id}/logo.png)`,
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH}/project/${project.id}/logo.png)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
               }}
             ></div>
-            <div className="m-[10px_20px_14px_14px] flex flex-col">
-              <div className="stroke-black text-[16px] mb-[10px] font-medium">{project.name}</div>
-              <div className="leading-[14px] text-[12px] mb-[5px]">{project.desc}</div>
-              <div className="leading-[12px] text-[12px]">{project.period_start} ~ {project.period_end}</div>
+            <div className="p-4 flex flex-col flex-1 gap-1.5">
+              <div className="text-base font-medium">{project.name}</div>
+              <div className="text-sm text-muted leading-snug line-clamp-2">{project.desc}</div>
+              <div className="text-xs text-muted mt-auto pt-2">{project.period_start} ~ {project.period_end}</div>
             </div>
           </div>
         })}

@@ -48,49 +48,57 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
     : "sm:translate-y-0 sm:translate-x-full translate-y-full"
 
   return <>
-    {isOpen && <div className="fixed h-[100%] w-[100%] left-0 top-0 z-10" onClick={() => setVisible(false)}></div>}
+    {isOpen && (
+      <div
+        className={`fixed h-[100%] w-[100%] left-0 top-0 z-10 bg-black/40 transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
+        onClick={() => setVisible(false)}
+      ></div>
+    )}
     <div
       onTransitionEnd={handleTransitionEnd}
       className={`
         flex flex-col z-11
         fixed sm:top-0 right-0
         h-[calc(100%-80px)] w-[100%] min-w-[320px] bottom-0
-        sm:h-dvh sm:w-[60%] bg-white
-        border-t-1 sm:border-s-1 sm:border-t-0 border-[#ced4da]
+        sm:h-dvh sm:w-[60%] bg-background
+        border-t sm:border-s sm:border-t-0 border-border
         transition-all duration-500
         ${translateActive}
       `}
     >
-      <div className="sm:h-[40px] h-[32px] p-[0_10px] border-b border-[#ced4da] flex">
-        <div className="m-[auto_0]" onClick={() => setVisible(false)}>
-          <Image className="cursor-pointer" width={20} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/close.svg`} alt="double arrow 아이콘" />
-        </div>
+      <div className="sm:h-11 h-9 px-3 border-b border-border flex items-center justify-end">
+        <button
+          className="cursor-pointer p-1.5 rounded-full transition-colors hover:bg-surface"
+          onClick={() => setVisible(false)}
+        >
+          <Image unoptimized className="dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/close.svg`} alt="닫기 아이콘" />
+        </button>
       </div>
       <div className="p-[0_40px] flex-1 flex flex-col overflow-hidden">
-        <div className="flex min-h-[300px] border-[#ced4da] border-b">
-          <div className="w-1/3 m-auto">
+        <div className="flex min-h-[300px] border-border border-b">
+          <div className="w-1/3 m-auto bg-white rounded-md p-3">
             {project.src && <Image className="align-middle" width={200} height={200} objectFit="contain" style={{ width: '100%' }} unoptimized={true} src={`${process.env.NEXT_PUBLIC_BASE_PATH}${project.src}/logo.png`} alt="프로젝트 메인 사진" />}
           </div>
           <div className="w-2/3 xl:p-[20px_60px] lg:p-[20px_40px] p-[10px_40px] m-auto">
             <div className="font-semibold sm:text-[28px] text-[18px] sm:mb-[20px] mb-[12px]">{project.name}</div>
             <div className="flex flex-col gap-[10px] sm:text-[18px] text-[12px]">
               <div className="lg:flex block">
-                <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/description.svg`} alt="description 아이콘" />
+                <div className="min-w-[80px] flex text-muted">
+                  <Image unoptimized className="m-[auto_0] mr-[5px] dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/description.svg`} alt="description 아이콘" />
                   <span className="m-[auto_0]">소개</span>
                 </div>
                 <div>{project.desc}</div>
               </div>
               <div className="lg:flex block">
-                <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/calendar_month.svg`} alt="calendar_month 아이콘" />
+                <div className="min-w-[80px] flex text-muted">
+                  <Image unoptimized className="m-[auto_0] mr-[5px] dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/calendar_month.svg`} alt="calendar_month 아이콘" />
                   <span className="m-[auto_0]">기간</span>
                 </div>
                 <div>{project.period_start} ~ {project.period_end}</div>
               </div>
               <div className="lg:flex block">
-                <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/code.svg`}alt="code 아이콘" />
+                <div className="min-w-[80px] flex text-muted">
+                  <Image unoptimized className="m-[auto_0] mr-[5px] dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/code.svg`}alt="code 아이콘" />
                   <span className="m-[auto_0]">스택</span>
                 </div>
                 <div className="flex flex-wrap flex-1 gap-[5px]">
@@ -102,20 +110,20 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
                 </div>
               </div>
               {project.github && <div className="lg:flex block">
-                <div className="min-w-[80px] flex">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/github.svg`} alt="github 아이콘" />
+                <div className="min-w-[80px] flex text-muted">
+                  <Image unoptimized className="m-[auto_0] mr-[5px] w-4 h-4 dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/github.svg`} alt="github 아이콘" />
                   <span className="m-[auto_0]">코드</span>
                 </div>
-                <a href={project.github} className="text-[#2196F3] block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
+                <a href={project.github} className="text-accent block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
                   {project.github}
                 </a>
               </div>}
               {project.link && <div className="lg:flex block">
-                <div className="min-w-[80px] flex whitespace-nowrap">
-                  <Image className="m-[auto_0] mr-[5px]" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/link.svg`} alt="link 아이콘" />
+                <div className="min-w-[80px] flex whitespace-nowrap text-muted">
+                  <Image unoptimized className="m-[auto_0] mr-[5px] dark:invert" width={16} height={16} src={`${process.env.NEXT_PUBLIC_BASE_PATH}/icons/link.svg`} alt="link 아이콘" />
                   <span className="m-[auto_0]">링크</span>
                 </div>
-                <a href={project.link} className="text-[#2196F3] block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
+                <a href={project.link} className="text-accent block w-[100%] whitespace-nowrap overflow-hidden text-ellipsis" target="_blank">
                   {project.link}
                 </a>
               </div>}
