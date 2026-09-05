@@ -23,8 +23,9 @@ export default function project() {
             onClick={() => openModal(SideBar, { project })}
           >
             <div
-              className="aspect-[4/3] relative rounded-t-lg bg-center border-b border-border bg-white"
+              className="aspect-[4/3] relative rounded-t-lg bg-center border-b border-border"
               style={{
+                backgroundColor: project.logoBg || '#ffffff',
                 backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH}/project/${project.id}/logo.png)`,
                 backgroundPosition: 'center',
                 backgroundSize: 'contain',
