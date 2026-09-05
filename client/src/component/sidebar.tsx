@@ -3,6 +3,10 @@ import useModal from "@/hooks/useModal"
 import { useContext, useEffect, useState } from "react"
 import Badge from "./badge"
 import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
+import rehypeRaw from 'rehype-raw'
 
 type TechCategory = 'front' | 'back' | 'lang' | 'db'
 interface StackItem {
@@ -18,17 +22,48 @@ type ProjectDesc = {
   src: string | null,
   imgLen: number,
   desc: string,
-  descDetail: string[],
-  descImg: string[],
+  descMd: string,
   stack: StackItem[],
   github: string | null,
   link: string | null,
+}
+
+const markdownComponents = {
+  p: (props: React.ComponentPropsWithoutRef<'p'>) => <p className="mb-3 last:mb-0" {...props} />,
+  strong: (props: React.ComponentPropsWithoutRef<'strong'>) => <strong className="font-semibold" {...props} />,
+  a: (props: React.ComponentPropsWithoutRef<'a'>) => <a className="text-accent underline" target="_blank" {...props} />,
+  ul: (props: React.ComponentPropsWithoutRef<'ul'>) => <ul className="list-disc pl-5 mb-3" {...props} />,
+  ol: (props: React.ComponentPropsWithoutRef<'ol'>) => <ol className="list-decimal pl-5 mb-3" {...props} />,
+  h1: (props: React.ComponentPropsWithoutRef<'h1'>) => <h1 className="text-xl font-bold mb-3" {...props} />,
+  h2: (props: React.ComponentPropsWithoutRef<'h2'>) => <h2 className="text-lg font-bold mb-2" {...props} />,
+  h3: (props: React.ComponentPropsWithoutRef<'h3'>) => <h3 className="text-base font-bold mb-2" {...props} />,
+  img: (props: React.ComponentPropsWithoutRef<'img'>) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      {...props}
+      src={`${process.env.NEXT_PUBLIC_BASE_PATH}${props.src}`}
+      className="w-full object-contain my-3"
+    />
+  ),
+  table: (props: React.ComponentPropsWithoutRef<'table'>) => (
+    <div className="overflow-x-auto my-3">
+      <table className="w-full table-fixed border-collapse" {...props} />
+    </div>
+  ),
+  thead: (props: React.ComponentPropsWithoutRef<'thead'>) => <thead {...props} />,
+  th: (props: React.ComponentPropsWithoutRef<'th'>) => (
+    <th className="border border-border p-2 text-center text-sm text-muted font-medium" {...props} />
+  ),
+  td: (props: React.ComponentPropsWithoutRef<'td'>) => (
+    <td className="border border-border p-2 align-middle" {...props} />
+  ),
 }
 
 export default function SideBar({ project, isOpen }: { project: ProjectDesc, isOpen: boolean }) {
   const modals = useContext(ModalsStateContext)
   const { close } = useContext(ModalsDispatchContext)
   const [visible, setVisible] = useState(false)
+  const [descMdContent, setDescMdContent] = useState('')
 
   useEffect(() => {
     if (isOpen) {
@@ -38,6 +73,16 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
       setVisible(false)
     }
   }, [isOpen])
+
+  useEffect(() => {
+    let cancelled = false
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}${project.descMd}`)
+      .then((res) => res.text())
+      .then((text) => {
+        if (!cancelled) setDescMdContent(text)
+      })
+    return () => { cancelled = true }
+  }, [project])
   
   const handleTransitionEnd = () => {
     if (!visible) close(SideBar)
@@ -131,13 +176,12 @@ export default function SideBar({ project, isOpen }: { project: ProjectDesc, isO
           </div>
         </div>
         <div style={{ scrollbarWidth: 'none' }} className="lg:p-[40px_60px] p-[20px_20px] overflow-auto scroll flex-1">
-          {project.descImg.map((img, idx) => {
-            return <div key={idx} className="flex flex-col gap-[10px] sm:gap-[20px] text-[12px] sm:text-[16px]">
-              <Image width={200} height={200} unoptimized={true} objectFit="contain" style={{ width: '100%' }} src={`${process.env.NEXT_PUBLIC_BASE_PATH}${img}`} alt={`${project.name}의 ${idx + 1}번째 사진`} />
-              <div className="font-medium leading-[18px] sm:leading-[28px] whitespace-pre-wrap">{project.descDetail[idx]}</div>
-              <div className="sm:h-[40px] h-[10px]"></div>
-            </div>
-          })}
+          <div className="font-medium leading-[18px] sm:leading-[28px]">
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} rehypePlugins={[rehypeRaw]} components={markdownComponents}>
+              {descMdContent}
+            </ReactMarkdown>
+          </div>
+          <div className="sm:h-[40px] h-[10px]"></div>
         </div>
       </div>
     </div>

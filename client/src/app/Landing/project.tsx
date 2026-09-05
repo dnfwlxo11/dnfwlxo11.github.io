@@ -27,7 +27,7 @@ export default function project() {
               style={{
                 backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH}/project/${project.id}/logo.png)`,
                 backgroundPosition: 'center',
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat'
               }}
             ></div>
