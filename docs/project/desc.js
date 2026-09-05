@@ -1,18 +1,19 @@
 const projects = [
   {
-    id: "poke_log",
+    id: "pokeLog",
     name: "포케로그",
     period_start: "2026-06-29",
     period_end: "운영중",
-    src: "/project/poke_log",
+    src: "/project/pokeLog",
     logoBg: "#0a1a3c",
     imgLen: 2,
     desc: "포켓몬 카드 컬렉터를 위한 카드 검색·컬렉션 관리 서비스",
-    descMd: "/md/poke_log.md",
+    descMd: "/md/pokeLog.md",
     stack: [
       { name: "Next.js", type: "front" },
       { name: "TypeScript", type: "lang" },
       { name: "Cloudflare Workers", type: "back" },
+      { name: "Lambda", type: "back" },
       { name: "D1", type: "db" },
     ],
     github: "",
