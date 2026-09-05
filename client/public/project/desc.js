@@ -5,7 +5,7 @@ const projects = [
     period_start: "2026-06-29",
     period_end: "운영중",
     src: "/project/poke_log",
-    logoBg: "#222222",
+    logoBg: "#0a1a3c",
     imgLen: 2,
     desc: "포켓몬 카드 컬렉터를 위한 카드 검색·컬렉션 관리 서비스",
     descDetail: [
